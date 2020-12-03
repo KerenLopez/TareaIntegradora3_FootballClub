@@ -522,7 +522,7 @@ public class FootballClub{
 		Employee objEmployee = findEmployee(id);
 		String message = "\nLos campeonatos ganados por el entrenador principal han sido actualizados exitosamente";
 		if(objEmployee!=null && objEmployee instanceof MainCoach && option==2){
-			objEmployee.setNumChampionships((getNumChampionships())+numChampionships);
+			((MainCoach)objEmployee).setNumChampionships((((MainCoach)objEmployee).getNumChampionships())+numChampionships);
 			for(int j=0;j<championships.size();j++){
 				((MainCoach)objEmployee).getChampionships().add(championships.get(j));
 			}
@@ -626,8 +626,12 @@ public class FootballClub{
 
 	public String showEmployees(){
 		String message = "";
-		for(int k=0;k<employees.size();k++){
-			message += employees.get(k).toString();
+		if(employees.isEmpty()){
+			message = "No hay ningun empleado registrado en el club aun";
+		}else{
+			for(int k=0;k<employees.size();k++){
+				message += employees.get(k).toString();
+			}
 		} 
 		return message;
 	}
@@ -681,7 +685,7 @@ public class FootballClub{
 				if(office[x][k]!=null){
 					message += "["+office[x][k].getName()+"]"+" ";
 				}else{
-					message += "[	X   ]" +" ";
+					message += "[	    ]" +" ";
 				}
 			}
 			message+="\n";

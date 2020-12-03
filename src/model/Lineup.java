@@ -8,6 +8,7 @@ public class Lineup{
 
 	//Atributes
 	private String date;
+	private String fieldFormation;
 	private int[][] formation;
 
 	//Relationships
@@ -26,8 +27,8 @@ public class Lineup{
 
 	public Lineup(String date, int lineupTactic){
 		this.date = date;
-		formation = new int[TEN][SEVEN]
-		switch(tactic){
+		formation = new int[TEN][SEVEN];
+		switch(lineupTactic){
 			case 1:
 				this.lineupTactic = Tactic.POSESION; 
 				break;
@@ -43,8 +44,56 @@ public class Lineup{
 		}
 	}
 
-	public String addFormation(int defenses, int midfielders, int forwards){
-		String message = "";
-		
+	public void addFormation(int defenses, int midfielders, int forwards){
+		int x=1;
+		for(int i=TEN-2;i>=0;i-=3){
+			if(i==TEN-2){	
+				for(int j=forwards-1;j>=0;j--){
+					formation[i][j] = x;
+				}
+			}
+			if(i==TEN-5){
+				for(int j=midfielders-1;j>=0;j--){
+					formation[i][j] = x;
+				}
+			}
+			if(i==TEN-8){
+				for(int j=defenses-1;j>=0;j--){
+					formation[i][j] = x;
+				}
+			}	
+		}
+	}
+
+	public String showFormation(int defenses, int midfielders, int forwards){
+		addFormation(defenses,midfielders,forwards);
+		int numDefenses = 0, numMidfielders = 0, numForwards = 0;
+		for(int i=TEN-2;i>=0;i-=3){
+			if(i==TEN-2){	
+				for(int j=SEVEN-1;j>=0;j--){
+					numDefenses += formation[i][j];
+				}
+			}
+			if(i==TEN-5){
+				for(int j=SEVEN-1;j>=0;j--){
+					numMidfielders += formation[i][j];
+				}
+			}
+			if(i==TEN-8){
+				for(int j=SEVEN-1;j>=0;j--){
+					numForwards += formation[i][j];
+				}
+			}	
+		}
+		fieldFormation = "La formacion ingresada es: "+numForwards+"-"+numMidfielders+"-"+numDefenses;
+		return fieldFormation;
+	}
+
+	public String toString(){
+		return "\n                                          *******************************************************"+
+			"\n                                          ********************** Alineacion ***********************"+
+			"\n                                          **  Fecha: "+date+
+			"\n                                          **  Tactica: "+lineupTactic+
+			"\n                                          **  Formacion: "+fieldFormation;	
 	}
 }

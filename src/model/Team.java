@@ -264,7 +264,7 @@ public class Team{
 					if(dressingRoom[x][i]!=null){
 						message += "["+dressingRoom[x][i].getName()+"]"+" ";
 					}else{
-						message += "[	X   ]"+" ";
+						message += "[	    ]"+" ";
 					}
 				}
 				message+="\n";
@@ -275,7 +275,7 @@ public class Team{
 					if(dressingRoom[x][i]!=null){
 						message += "["+dressingRoom[x][i].getName()+"]"+" ";
 					}else{
-						message += "[	X   ]"+" ";
+						message += "[	    ]"+" ";
 					}
 				}
 				message+="\n";
@@ -297,7 +297,7 @@ public class Team{
 	public String addNewLineup(String date, int tactic, int defenses, int midfielders, int forwards){
 		Lineup newLineup = new Lineup(date, tactic);
 		lineups.add(newLineup);
-		String message = newLineup.addFormation(defenses, midfielders, forwards);
+		String message = newLineup.showFormation(defenses, midfielders, forwards);
 		return message;
 	}
 
@@ -333,6 +333,14 @@ public class Team{
 		}
 		if(contP==0){
 			message+="\n                                          **  Jugadores: No tiene";
+		}
+		message+="\n                                          **************** lista de alineaciones ***************";
+		if(lineups.isEmpty()){
+			message+="\n                                          No ha sido agregado ninguna alineacion al equipo aun";
+		}else{
+			for(int x=0;x<lineups.size();x++){
+				message+=lineups.get(x).toString();
+			}
 		}
 		return "\n                                          *******************************************************"+
 			"\n                                          ********************** Equipo "+id+" ***********************"+

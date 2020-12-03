@@ -477,7 +477,7 @@ public class Main{
 		    						System.out.println("Digite una opcion correcta");
 		    					}
 		    				} while(decision!=1 && decision!=2);	
-		    			} while((expertise!=1 && expertise!=2 && expertise!=3 && expertise!=4 && expertise!=5 && expertise!=6 && decision==1);
+		    			} while(expertise!=1 && expertise!=2 && expertise!=3 && expertise!=4 && expertise!=5 && expertise!=6 && decision==1);
 		    			message = mainFootballClub.changeExpertisesEmployee(id,expertises,option);
     					System.out.println(message);
 		    			break;
@@ -488,7 +488,7 @@ public class Main{
 
     public void updateTeam(){
     	String nameTeam, newName, message, date;
-    	int defenses, midfielders, forwards, sum;
+    	int defenses, midfielders, forwards, sum, tactic;
     	int option = 0;
     	System.out.println(
 			"\n************************************************************************************************************************\n"+
@@ -528,27 +528,42 @@ public class Main{
     				do{
     					System.out.println("Ingrese el numero de defensores que quiere agregar para la alineacion: ");
     					defenses = lector.nextInt();
-    					if(defenses>1){
-    						message = "\nDebe ingresar por lo menos 1 jugador en la linea de defensa";
-    						System.out.println(message);
+    					if(defenses<1 || defenses>7){
+    						if(defenses<1){
+    							message = "\nDebe ingresar por lo menos 1 jugador en la linea de defensa";
+    							System.out.println(message);
+    						}else{
+    							message = "\nEl numero maximo de jugadores que se puede ingresar en la linea de defensa es 7";
+    							System.out.println(message);
+    						}
     					}
-    				}while(defenses>1);
+    				}while(defenses<1 || defenses>7);
     				do{	
     					System.out.println("Ingrese el numero de volantes que quiere agregar para la alineacion: ");
     					midfielders = lector.nextInt();
-    					if(midfielders>1){
-    						message = "\nDebe ingresar por lo menos 1 jugador en la linea de volantes";
-    						System.out.println(message);
+    					if(midfielders<1 || defenses>7){
+    						if(midfielders<1){
+    							message = "\nDebe ingresar por lo menos 1 jugador en la linea de volantes";
+    							System.out.println(message);
+    						} else{
+    							message = "\nEl numero maximo de jugadores que se puede ingresar en la linea de volantes es 7";
+    							System.out.println(message);
+    						}	
     					}
-    				}while(midfielders>1);	
+    				}while(midfielders<1 || defenses>7);	
     				do{
     					System.out.println("Ingrese el numero de delanteros que quiere agregar para la alineacion: ");
     					forwards = lector.nextInt();
-    					if(forwards>1){
-    						message = "\nDebe ingresar por lo menos 1 jugador en la linea de delanteros";
-    						System.out.println(message);
+    					if(forwards<1 || forwards>7){
+    						if(forwards<1){
+    							message = "\nDebe ingresar por lo menos 1 jugador en la linea de delanteros";
+    							System.out.println(message);
+    						}else{
+    							message = "\nEl numero maximo de jugadores que se puede ingresar en la linea de delanteros es 7";
+    							System.out.println(message);
+    						}
     					}
-    				}while(forwards>1);
+    				}while(forwards<1 || forwards>7);
     				sum = defenses+midfielders+forwards;
     				if(sum!=10){
     					message = "\nNo es posible realizar la formacion escogida, recuerde que el numero total de jugadores escogidos debe ser igual a 10";
