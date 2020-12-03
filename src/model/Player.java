@@ -1,6 +1,6 @@
 package model;
 
-public class Player extends Employee implements MarketPrice, Level{
+public class Player extends Employee implements MarketPriceAndLevelPlayer{
 
 	//Atributes
 	private int numShirt;
@@ -151,11 +151,11 @@ public class Player extends Employee implements MarketPrice, Level{
 	* @param pAuthorizedUser is an User object that contains the information of the only user that can access to the playlist.
 	*/
 
-	public Player(String name, String id, double salary, int numShirt, int position){
+	public Player(String name, String id, double salary, int numShirt, double averageGrade, int position){
 		super(name,id,salary);
 		this.numShirt = numShirt;
 		numGoals = 0;
-		averageGrade = 0;
+		this.averageGrade = averageGrade;
 		switch(position){
 			case 1:
 				this.position = Position.PORTERO; 
@@ -172,41 +172,49 @@ public class Player extends Employee implements MarketPrice, Level{
 		}
 	}
 
+	@Override
 	public double goalieMarketPrice(){
 		marketPrice = (salary*12)+(averageGrade*150);
 		return marketPrice;
 	}
 
+	@Override
 	public double defenseMarketPrice(){
 		marketPrice = (salary*13)+(averageGrade*125)+(numGoals*100);
 		return marketPrice;
 	}
 
-	public double mildfielderMarketPrice(){
+	@Override
+	public double midfielderMarketPrice(){
 		marketPrice = (salary*14)+(averageGrade*135)+(numGoals*125);
 		return marketPrice;
 	}
 
+	@Override
 	public double forwardMarketPrice(){
 		marketPrice = (salary*12)+(averageGrade*145)+(numGoals*150);
 		return marketPrice;
 	}
 
+	@Override
 	public double goalieLevel(){
-		level = averageGrade*0.9
+		level = averageGrade*0.9;
 		return level;
 	}
 
+	@Override
 	public double defenseLevel(){
 		level = (averageGrade*0.9)+(numGoals/100);
 		return level;
 	}
 
-	public double mildfielderLevel(){
+	@Override
+	public double midfielderLevel(){
 		level = (averageGrade*0.9)+(numGoals/90);
 		return level;
 	}
 
+	@Override
 	public double forwardLevel(){
 		level = (averageGrade*0.9)+(numGoals/80);
 		return level;
@@ -222,28 +230,26 @@ public class Player extends Employee implements MarketPrice, Level{
 	@Override
 	public String toString(){
 		String message = "";
-		switch(position){
-			case Position.PORTERO:
-				message = "\n                                          **  Precio de mercado: "+goalieMarketPrice()+
-				"\n                                          **  Nivel: "+goalieLevel();
-				break;
-			case Position.DEFENSOR:
-				message = "\n                                          **  Precio de mercado: "+defenseMarketPrice()+
-				"\n                                          **  Nivel: "+defenseLevel();
-				break;
-			case Position.VOLANTE:
-				message = "\n                                          **  Precio de mercado: "+mildfielderMarketPrice()+
-				"\n                                          **  Nivel: "+mildfielderLevel();
-				break;
-			case Position.DELANTERO:
-				message = "\n                                          **  Precio de mercado: "+forwardMarketPrice()+
-				"\n                                          **  Nivel: "+forwardLevel();
-				break;	 
+		if(position.equals(Position.PORTERO)){
+			message = "\n                                          **  Precio de mercado: "+goalieMarketPrice()+
+			"\n                                          **  Nivel: "+goalieLevel();
+		}	
+		if(position.equals(Position.DEFENSOR)){
+			message = "\n                                          **  Precio de mercado: "+defenseMarketPrice()+
+			"\n                                          **  Nivel: "+defenseLevel();
+		}
+		if(position.equals(Position.VOLANTE)){
+			message = "\n                                          **  Precio de mercado: "+midfielderMarketPrice()+
+			"\n                                          **  Nivel: "+midfielderLevel();
+		}
+		if(position.equals(Position.DELANTERO)){
+			message = "\n                                          **  Precio de mercado: "+forwardMarketPrice()+
+			"\n                                          **  Nivel: "+forwardLevel();	 
 		}
 		return super.toString()+"\n                                          **  Cargo: Jugador"+
 		"\n                                          **  Numero de camiseta: "+numShirt+
 		"\n                                          **  Goles marcados en el club: "+numGoals+
 		"\n                                          **  Calificacion promedio: "+averageGrade+
-		"\n                                          **  Numero de camiseta: "+position+message;
+		"\n                                          **  Posicion: "+position+message;
 	}
 }

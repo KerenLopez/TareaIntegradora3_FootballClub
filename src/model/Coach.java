@@ -3,7 +3,7 @@ package model;
 public abstract class Coach extends Employee{
 
 	//Atributes
-	private int yearsExperience;
+	protected int yearsExperience;
 
 	//Getters and Setters 
 

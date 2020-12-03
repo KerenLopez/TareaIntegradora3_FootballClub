@@ -7,10 +7,10 @@ public abstract class Employee{
 	public final static String INACTIVE = "inactivo";
 
 	//Atributes
-	private String name;
-	private String id;
-	private double salary;
-	private String state;
+	protected String name;
+	protected String id;
+	protected double salary;
+	protected String state;
 
 	//Getters and Setters 
 

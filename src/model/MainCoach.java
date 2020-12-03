@@ -1,11 +1,12 @@
 package model;
+import java.util.*;
 
-public class MainCoach extends Coach implements MarketPrice, Level{
+public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 
 	//Atributes
 	private int numTeams;
 	private int numChampionships;
-	private ArrayList <String> championships;
+	private ArrayList<String> championships;
 	private double marketPrice;
 	private double level;
 
@@ -123,11 +124,13 @@ public class MainCoach extends Coach implements MarketPrice, Level{
 		level = 0;
 	}
 
+	@Override
 	public double coachMarketPrice(){
 		marketPrice = (salary*10)+(yearsExperience*100)+(numChampionships*50); 
 		return marketPrice;
 	}
 
+	@Override
 	public double coachLevel(){
 		level = 5 +(numChampionships/10);
 		return level;
