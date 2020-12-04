@@ -88,6 +88,47 @@ public class AssistantCoach extends Coach{
 		}	
 	}
 
+	public boolean findExpertise(Expertise newExpertise){
+		boolean find = false;
+		for(int i=0;i<expertises.size() && !find;i++){
+			if(expertises.get(i).equals(newExpertise)){
+				find = true;
+			}
+		} return find;
+	}
+
+	public void updateExpertises(ArrayList<Integer> cExpertises){
+		ArrayList<Expertise> newExpertises = new ArrayList<>();
+		for(int j=0; j<cExpertises.size();j++){
+			switch(cExpertises.get(j)){
+				case 1:
+					newExpertises.add(Expertise.OFENSIVO); 
+					break;
+				case 2:
+					newExpertises.add(Expertise.DEFENSIVO); 
+					break;
+				case 3:
+					newExpertises.add(Expertise.POSESION); 
+					break;
+				case 4:
+					newExpertises.add(Expertise.JUGADAS_LABORATORIO); 
+					break;
+				case 5:
+					newExpertises.add(Expertise.ENTRENADOR_FISICO); 
+					break;
+				case 6:
+					newExpertises.add(Expertise.ENTRENADOR_DE_ARQUEROS); 
+					break;					
+			}
+		}
+		for(int k=0;k<newExpertises.size();k++){
+			boolean add = findExpertise(newExpertises.get(k));
+			if(add == false){
+				expertises.add(newExpertises.get(k));
+			}
+		}
+	}
+
 	/**
 	* This method produces a String with the information of a private playlist. <br>
 	* <b>name</b>: toString.<br>

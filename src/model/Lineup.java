@@ -71,7 +71,7 @@ public class Lineup{
 		for(int i=TEN-2;i>=0;i-=3){
 			if(i==TEN-2){	
 				for(int j=SEVEN-1;j>=0;j--){
-					numDefenses += formation[i][j];
+					numForwards += formation[i][j];
 				}
 			}
 			if(i==TEN-5){
@@ -81,7 +81,7 @@ public class Lineup{
 			}
 			if(i==TEN-8){
 				for(int j=SEVEN-1;j>=0;j--){
-					numForwards += formation[i][j];
+					numDefenses += formation[i][j];
 				}
 			}	
 		}
@@ -91,7 +91,7 @@ public class Lineup{
 
 	public String toString(){
 		return "\n                                          *******************************************************"+
-			"\n                                          ********************** Alineacion ***********************"+
+			"\n                                          ********************** Alineacion *********************"+
 			"\n                                          **  Fecha: "+date+
 			"\n                                          **  Tactica: "+lineupTactic+
 			"\n                                          **  Formacion: "+fieldFormation;	

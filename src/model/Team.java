@@ -14,8 +14,8 @@ public class Team{
 	//Constants
 	public final static int MAX_NUM_PLAYERS = 25;
 	public final static int MAX_NUM_ASSCOACHES = 3;
-	public final static int SEVEN = 3;
-	public final static int SIX = 3;
+	public final static int SEVEN = 2;
+	public final static int SIX = 2;
 	public final static int FOUR = 4;
 
 	//Relationships
@@ -113,6 +113,27 @@ public class Team{
 			} 
 		} else{
 			message = "\nEl rango en el que el numero de camiseta de un jugador debe encontrarse es entre 1 y 99";
+		} return message;	
+	}
+
+	public String findMember(String id){
+		String message = "\nEl empleado pertenece al equipo";
+		boolean find = false;
+		for(int k=0;k<players.length;k++){
+			if(players[k]!=null && players[k].getId().equals(id)){
+				find = true;
+			}
+		}
+		for(int x=0;x<assistantCoaches.length;x++){
+			if(assistantCoaches[x]!=null && assistantCoaches[x].getId().equals(id)){
+				find = true;
+			}
+		}
+		if(mainCoach!=null && mainCoach.getId().equals(id)){
+			find = true;
+		} 
+		if(!find){
+			message = "\nEl empleado no pertenece al equipo ingresado, intentelo nuevamente";
 		} return message;	
 	}
 
@@ -283,14 +304,21 @@ public class Team{
 		} return message;
 	}
 
-	public Player[] calculatePlayersOut(){
-		Player[] playersOut = new Player[FOUR];
-		for(int x=0;x<SEVEN;x++){
-			for(int i = 0;i<SIX;i++){
-				if(dressingRoom[x][i]!=null && !(dressingRoom[x][i].getName().equals(players[x]))){
-					playersOut[x] = players[x];
+	public ArrayList<Player> calculatePlayersOut(){
+		boolean stop = false;
+		ArrayList<Player> playersOut = new ArrayList<>();
+		for(int k=0;k<players.length;k++){
+			stop = false;
+			for(int x = 0;x<SEVEN && !stop;x++){
+				for(int i = 0;i<SIX && !stop;i++){
+					if(dressingRoom[x][i]!=null && players[k]!=null){
+						if(!(dressingRoom[x][i].getName().equals(players[k].getName()))){
+							playersOut.add(players[k]);
+							stop = true;
+						}
+					}
 				}
-			}
+			} 
 		} return playersOut;
 	}
 
@@ -334,7 +362,7 @@ public class Team{
 		if(contP==0){
 			message+="\n                                          **  Jugadores: No tiene";
 		}
-		message+="\n                                          **************** lista de alineaciones ***************";
+		message+="\n                                          *******************************************************"+"\n                                          ***************** lista de alineaciones ***************";
 		if(lineups.isEmpty()){
 			message+="\n                                          No ha sido agregado ninguna alineacion al equipo aun";
 		}else{

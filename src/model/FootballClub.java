@@ -196,7 +196,7 @@ public class FootballClub{
 			if(message.equals("El numero de camiseta puede ser asignado")){
 				Player newEmployee = new Player(name, id, salary, numShirt, averageGrade, position);
 				if(teamA.getName().equalsIgnoreCase(team)){
-				message = teamA.addPlayer(newEmployee);
+					message = teamA.addPlayer(newEmployee);
 				}else{
 					message = teamB.addPlayer(newEmployee);
 				}
@@ -206,7 +206,7 @@ public class FootballClub{
 			} 
 		} else{ 
 			if(objEmployee!=null){
-				message = "\nYa existe un empleado con esa identificacion, intentelo nuevamente";
+				message = "\nYa existe un empleado registrado en el club con esa identificacion, intentelo nuevamente";
 			} 
 			if(!(teamA.getName().equalsIgnoreCase(team)) && !(teamB.getName().equalsIgnoreCase(team))){
 				message = "\nEl equipo no existe, intentelo nuevamente";
@@ -329,11 +329,12 @@ public class FootballClub{
 
 	public String changeSalaryEmployee(String id, double newSalary, int option){
 		Employee objEmployee = findEmployee(id);
-		String message = "\nEl salario del empleado ha sido actualizado exitosamente";
+		String message = " ";
 		switch(option){
 			case 1:
 				if(objEmployee!=null && objEmployee instanceof Player){
 					((Player)objEmployee).setSalary(newSalary);
+					 message = "\nEl salario del empleado ha sido actualizado exitosamente";
 				}else{
 					if(objEmployee==null){
 						message += "\nEl empleado no existe, intentelo nuevamente";
@@ -346,6 +347,7 @@ public class FootballClub{
 			case 2:
 				if(objEmployee!=null && objEmployee instanceof MainCoach){
 					((MainCoach)objEmployee).setSalary(newSalary);
+					 message = "\nEl salario del empleado ha sido actualizado exitosamente";
 				}else{
 					if(objEmployee==null){
 						message += "\nEl empleado no existe, intentelo nuevamente";
@@ -358,6 +360,7 @@ public class FootballClub{
 			case 3:
 				if(objEmployee!=null && objEmployee instanceof AssistantCoach){
 					((AssistantCoach)objEmployee).setSalary(newSalary);
+					 message = "\nEl salario del empleado ha sido actualizado exitosamente";
 				}else{
 					if(objEmployee==null){
 						message += "\nEl empleado no existe, intentelo nuevamente";
@@ -372,16 +375,25 @@ public class FootballClub{
 
 	public String changeNumShirt(String id, String team, int numShirt, int option){
 		Employee objEmployee = findEmployee(id);
-		String message = "";
+		String message = "", advice1 = "", advice2 = "";
 		if(objEmployee!=null && (teamA.getName().equalsIgnoreCase(team)||teamB.getName().equalsIgnoreCase(team)) && objEmployee instanceof Player && option==1){
 			if(teamA.getName().equalsIgnoreCase(team)){
-				message = teamA.findNumShirt(numShirt);
+				advice1 = teamA.findNumShirt(numShirt);
+				advice2 = teamA.findMember(id);
 			}else{
-				message = teamB.findNumShirt(numShirt);
+				advice1 = teamB.findNumShirt(numShirt);
+				advice2= teamB.findMember(id);
 			}
-			if(message.equals("El numero de camiseta puede ser asignado")){
+			if(advice1.equals("El numero de camiseta puede ser asignado") && advice2.equals("\nEl empleado pertenece al equipo")){
 				((Player)objEmployee).setNumShirt(numShirt);
 				message =  "\nEl numero de camiseta del jugador ha sido actualizado exitosamente";
+			}else{
+				if(!advice1.equals("El numero de camiseta puede ser asignado")){
+					message += advice1;
+				}
+				if(!advice2.equals("\nEl empleado pertenece al equipo")){
+					message += advice2;
+				}
 			}
 		}else{
 			if(objEmployee==null){
@@ -401,9 +413,10 @@ public class FootballClub{
 
 	public String changeNumGoals(String id, int numGoals, int option){
 		Employee objEmployee = findEmployee(id);
-		String message = "\nEl numero de goles que el jugador ha marcado en el club ha sido actualizado exitosamente";
+		String message = " ";
 		if(objEmployee!=null && objEmployee instanceof Player && option==1){
 			((Player)objEmployee).setNumGoals(numGoals);
+			message = "\nEl numero de goles que el jugador ha marcado en el club ha sido actualizado exitosamente";
 		}else{
 			if(objEmployee==null){
 				message += "\nEl empleado no existe, intentelo nuevamente";
@@ -419,9 +432,10 @@ public class FootballClub{
 
 	public String changeAverageGrade(String id, double averageGrade, int option){
 		Employee objEmployee = findEmployee(id);
-		String message = "\nLa calificacion promedio del jugador ha sido actualizada exitosamente";
+		String message = " ";
 		if(objEmployee!=null && objEmployee instanceof Player && option==1){
 			((Player)objEmployee).setAverageGrade(averageGrade);
+			message = "\nLa calificacion promedio del jugador ha sido actualizada exitosamente";
 		}else{
 			if(objEmployee==null){
 				message += "\nEl empleado no existe, intentelo nuevamente";
@@ -437,7 +451,7 @@ public class FootballClub{
 
 	public String changePosition(String id, int position, int option){
 		Employee objEmployee = findEmployee(id);
-		String message = "\nLa posicion del jugador ha sido actualizada exitosamente";
+		String message = " ";
 		if(objEmployee!=null && objEmployee instanceof Player && option==1){
 			switch(position){
 				case 1:
@@ -452,7 +466,8 @@ public class FootballClub{
 				case 4:
 					((Player)objEmployee).setPosition(Position.DELANTERO); 
 					break;
-			}		
+			}
+			 message = "\nLa posicion del jugador ha sido actualizada exitosamente";		
 		}else{
 			if(objEmployee==null){
 				message += "\nEl empleado no existe, intentelo nuevamente";
@@ -468,7 +483,7 @@ public class FootballClub{
 
 	public String changeExperienceEmployee(String id, int experience, int option){
 		Employee objEmployee = findEmployee(id);
-		String message = "\nLa calificacion promedio del jugador ha sido actualizada exitosamente";
+		String message = " ";
 		switch(option){
 			case 1:
 				message = "\nLo sentimos, este atributo solo puede ser actualizado a entrenadores";
@@ -476,6 +491,7 @@ public class FootballClub{
 			case 2:
 				if(objEmployee!=null && objEmployee instanceof MainCoach){
 					((MainCoach)objEmployee).setYearsExperience(experience);
+					message = "\nLos anios de experiencia del entrenador han sido actualizados exitosamente";
 				}else{
 					if(objEmployee==null){
 						message += "\nEl empleado no existe, intentelo nuevamente";
@@ -488,6 +504,7 @@ public class FootballClub{
 			case 3:
 				if(objEmployee!=null && objEmployee instanceof AssistantCoach){
 					((AssistantCoach)objEmployee).setYearsExperience(experience);
+					message = "\nLos anios de experiencia del entrenador han sido actualizados exitosamente";
 				}else{
 					if(objEmployee==null){
 						message += "\nEl empleado no existe, intentelo nuevamente";
@@ -502,9 +519,10 @@ public class FootballClub{
 
 	public String changeNumTeamsEmployee(String id, int numTeams, int option){
 		Employee objEmployee = findEmployee(id);
-		String message = "\nEl numero de equipos que el entrenador ha tenido a cargo durante su carrera ha sido actualizado exitosamente";
+		String message = " ";
 		if(objEmployee!=null && objEmployee instanceof MainCoach && option==2){
 			((MainCoach)objEmployee).setNumTeams(numTeams);
+			message = "\nEl numero de equipos que el entrenador ha tenido a cargo durante su carrera ha sido actualizado exitosamente";
 		}else{
 			if(objEmployee==null){
 				message += "\nEl empleado no existe, intentelo nuevamente";
@@ -520,12 +538,13 @@ public class FootballClub{
 
 	public String changeChampionshipsEmployee(String id, int numChampionships, ArrayList<String> championships, int option){
 		Employee objEmployee = findEmployee(id);
-		String message = "\nLos campeonatos ganados por el entrenador principal han sido actualizados exitosamente";
+		String message = " ";
 		if(objEmployee!=null && objEmployee instanceof MainCoach && option==2){
 			((MainCoach)objEmployee).setNumChampionships((((MainCoach)objEmployee).getNumChampionships())+numChampionships);
 			for(int j=0;j<championships.size();j++){
 				((MainCoach)objEmployee).getChampionships().add(championships.get(j));
 			}
+			message = "\nLos campeonatos ganados por el entrenador principal han sido actualizados exitosamente";
 		}else{
 			if(objEmployee==null){
 				message += "\nEl empleado no existe, intentelo nuevamente";
@@ -541,39 +560,10 @@ public class FootballClub{
 
 	public String changeExpertisesEmployee(String id, ArrayList<Integer> expertises, int option){
 		Employee objEmployee = findEmployee(id);
-		ArrayList<Expertise> cExpertises = new ArrayList<>();
-		String message = "\nLas experticias del entrenador han sido actualizadas exitosamente";
+		String message = " ";
 		if(objEmployee!=null && objEmployee instanceof AssistantCoach && option==3){
-			for(int k=0; k<expertises.size();k++){
-				switch(expertises.get(k)){
-					case 1:
-						cExpertises.add(Expertise.OFENSIVO); 
-						break;
-					case 2:
-						cExpertises.add(Expertise.DEFENSIVO); 
-						break;
-					case 3:
-						cExpertises.add(Expertise.POSESION); 
-						break;
-					case 4:
-						cExpertises.add(Expertise.JUGADAS_LABORATORIO); 
-						break;
-					case 5:
-						cExpertises.add(Expertise.ENTRENADOR_FISICO); 
-						break;
-					case 6:
-						cExpertises.add(Expertise.ENTRENADOR_DE_ARQUEROS); 
-						break;					
-				}
-			}
-			for(int i=0;i<((AssistantCoach)objEmployee).getExpertises().size();i++){
-				if(((AssistantCoach)objEmployee).getExpertises().get(i).equals(cExpertises.get(i))){
-					cExpertises.remove(i);
-				}
-			}
-			for(int j=0;j<cExpertises.size();j++){
-				((AssistantCoach)objEmployee).getExpertises().add(cExpertises.get(j));
-			}
+			((AssistantCoach)objEmployee).updateExpertises(expertises);
+			message = "\nLas experticias del entrenador han sido actualizadas exitosamente";
 		}else{
 			if(objEmployee==null){
 				message += "\nEl empleado no existe, intentelo nuevamente";
@@ -606,8 +596,8 @@ public class FootballClub{
 
 	public String addLineupToTeam(String nameTeam, String date, int tactic, int defenses, int midfielders, int forwards){
 		String message = " ";
-		if(teamA.getName().equalsIgnoreCase(name)||teamB.getName().equalsIgnoreCase(name)){
-			if(teamA.getName().equalsIgnoreCase(name)){
+		if(teamA.getName().equalsIgnoreCase(nameTeam)||teamB.getName().equalsIgnoreCase(nameTeam)){
+			if(teamA.getName().equalsIgnoreCase(nameTeam)){
 				message = teamA.addNewLineup(date,tactic,defenses,midfielders,forwards);	
 			}else{
 				message = teamB.addNewLineup(date,tactic,defenses,midfielders,forwards);	
@@ -627,7 +617,7 @@ public class FootballClub{
 	public String showEmployees(){
 		String message = "";
 		if(employees.isEmpty()){
-			message = "No hay ningun empleado registrado en el club aun";
+			message = "\n                                          No hay ningun empleado registrado en el club aun";
 		}else{
 			for(int k=0;k<employees.size();k++){
 				message += employees.get(k).toString();
@@ -673,11 +663,9 @@ public class FootballClub{
 
 	public String showFacilities(){
 		String message = "\nCamerino del equipo A: \n"+teamA.showDressingRoom()+"\nCamerino del equipo B: \n"+teamB.showDressingRoom()+"\nJugadores del equipo B que se quedaron sin camerino: \n";
-		Player[] playersOutDressingRoom = teamB.calculatePlayersOut();
-		for(int k=0;k<playersOutDressingRoom.length;k++){
-			if(playersOutDressingRoom[k]!=null){
-				message+="["+playersOutDressingRoom[k].getName()+"]";
-			}
+		ArrayList<Player> playersOutDressingRoom = teamB.calculatePlayersOut();
+		for(int k=0;k<playersOutDressingRoom.size();k++){
+			message+="["+playersOutDressingRoom.get(k).getName()+"]";
 		}
 		message+="\nOficinas de los entrenadores\n";
 		for(int x=0;x<SIX;x++){
