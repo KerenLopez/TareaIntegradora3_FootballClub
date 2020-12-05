@@ -10,17 +10,13 @@ public class Team{
 	//Constants
 	public final static char TEAM_A = 'A';
 	public final static char TEAM_B = 'B';
-
-	//Constants
 	public final static int MAX_NUM_PLAYERS = 25;
 	public final static int MAX_NUM_ASSCOACHES = 3;
-	public final static int SEVEN = 2;
-	public final static int SIX = 2;
-	public final static int FOUR = 4;
+	public final static int SEVEN = 7;
+	public final static int SIX = 6;
 
 	//Relationships
 	private Player[][] dressingRoom;
-	private Coach[][] office;
 	private ArrayList <Lineup> lineups;
 	private MainCoach mainCoach;
 	private AssistantCoach[] assistantCoaches;
@@ -39,7 +35,7 @@ public class Team{
 	}
 
 	/**
-	* this method modifies the name of a team. <br>
+	* This method modifies the name of a team. <br>
 	* <b>name</b>: setName <br>
 	* <b>post</b>: the name of a team has been changed. <br>
 	* @param name is a String variable.
@@ -50,9 +46,9 @@ public class Team{
 	}
 
 	/**
-	* This method returns the id of a team. <br>
+	* This method returns the ID of a team. <br>
 	* <b>name</b>: getId <br>
-	* @return char <code> id </code> that is a variable with the id of a team.
+	* @return char <code> id </code> that is a variable with the ID of a team.
 	*/
 
 	public char getId(){
@@ -60,9 +56,9 @@ public class Team{
 	}
 
 	/**
-	* this method modifies the id of a team. <br>
+	* This method modifies the ID of a team. <br>
 	* <b>name</b>: setId <br>
-	* <b>post</b>: the id of a team has been changed. <br>
+	* <b>post</b>: the ID of a team has been changed. <br>
 	* @param id is a char variable.
 	*/
 
@@ -70,12 +66,120 @@ public class Team{
 		this.id = id;
 	}
 
+	/**
+	* This method returns the dressing room of a team. <br>
+	* <b>name</b>: getDressingRoom <br>
+	* @return Player[][] <code> dressingRoom </code> that is a matrix of players that represents how they are located in the dressing room of a team.
+	*/
+
+	public Player[][] getDressingRoom(){
+		return dressingRoom;
+	}
+
+	/**
+	* This method modifies the dressing room of a team. <br>
+	* <b>name</b>: setDressingRoom <br>
+	* <b>post</b>: the dressing room of a team has been changed. <br>
+	* @param dressingRoom is a matrix of Players.
+	*/
+
+	public void setDressingRoom(Player[][] dressingRoom){
+		this.dressingRoom = dressingRoom;
+	}
+
+	/**
+	* This method returns all the lineups of a team. <br>
+	* <b>name</b>: getLineups <br>
+	* @return ArrayList of Lineup <code> lineups </code> that contains all the lineups of a team.
+	*/
+
+	public ArrayList<Lineup> getLineups(){
+		return lineups;
+	}
+
+	/**
+	* This method modifies the lineups of a team. <br>
+	* <b>name</b>: setLineups<br>
+	* <b>post</b>: the lineups of a team has been changed. <br>
+	* @param lineups is an ArrayList of type Lineup.
+	*/
+
+	public void setLineups(ArrayList<Lineup> lineups){
+		this.lineups = lineups;
+	}
+
+	/**
+	* This method returns the main coach of a team. <br>
+	* <b>name</b>: getMainCoach <br>
+	* @return MainCoach <code> mainCoach </code> that is an object that represents the main coach of a team.
+	*/
+
+	public MainCoach getMainCoach(){
+		return mainCoach;
+	}
+
+	/**
+	* This method modifies the main coach of a team. <br>
+	* <b>name</b>: setMainCoach<br>
+	* <b>post</b>: the main coach of a team has been changed. <br>
+	* @param mainCoach is an object of type MainCoach.
+	*/
+
+	public void setMainCoach(MainCoach mainCoach){
+		this.mainCoach = mainCoach;
+	}
+
+	/**
+	* This method returns the assistant coaches of a team. <br>
+	* <b>name</b>: getAssistantCoaches <br>
+	* @return AssistantCoach <code> assistantCoaches[] </code> that is a list with the assistant coaches of a team.
+	*/
+
+	public AssistantCoach[] getAssistantCoaches(){
+		return assistantCoaches;
+	}
+
+	/**
+	* This method modifies the assistant coaches of a team. <br>
+	* <b>name</b>: setAssistantCoaches <br>
+	* <b>post</b>: the assistant coaches of a team has been changed. <br>
+	* @param assistantCoaches is a list of AssistantCoach objects.
+	*/
+
+	public void setAssistantCoaches(AssistantCoach[] assistantCoaches){
+		this.assistantCoaches = assistantCoaches;
+	}
+
+	/**
+	* This method returns the players of a team. <br>
+	* <b>name</b>: getPlayers <br>
+	* @return Player[] <code> players </code> that is a list with the players of a team.
+	*/
+
+	public Player[] getPlayers(){
+		return players;
+	}
+
+	/**
+	* This method modifies the players of a team. <br>
+	* <b>name</b>: setPlayers <br>
+	* <b>post</b>: the players of a team has been changed. <br>
+	* @param players is a list of Player objects.
+	*/
+
+	public void setPlayers(Player[] players){
+		this.players = players;
+	}
+
 	//Methods
 
 	/**
 	* Builder method <br>
-	* <b>name</b>: FootballClub <br>
-	* <b>post</b>: The atributes and relationships of the class were inicializated. <br>
+	* <b>name</b>: Team <br>
+	* <b>pre</b>: the variables name and id are already inicializated. <br>
+	* <b>post</b>: the atributes and some relationships of the class were inicializated. <br>
+	* @param name is a String variable that contains the name of a team.
+	* @param id is a String variable that contains the ID of a team.
 	*/
 
 	public Team(String name, char id){
@@ -92,12 +196,12 @@ public class Team{
 	}
 
 	/**
-	* This method looks for the name of a user in the list of registered users, and returns an object of type User. <br>
-	* <b>name</b>: findTeam.<br>
-	* <b>pre</b>: the variable nameUser is already inicializated. <br>
- 	* <b>post</b>: An object of type User was returned. <br>
- 	* @param nameTeam is a String variable that contains the name of the user. 
- 	* @return User <code> objUser </code> that is an object that could be null or full.
+	* This method looks for a number of shirt in the list of players belonging to a team. <br>
+	* <b>name</b>: findNumShirt.<br>
+	* <b>pre</b>: the variable numShirt is already inicializated. <br>
+ 	* <b>post</b>: the number of shirt was founded or not. <br>
+ 	* @param numShirt is an integer variable that contains the number of a shirt. 
+ 	* @return String <code> message </code> that is variable with a notice for the user.
 	*/
 
 	public String findNumShirt(int numShirt){
@@ -115,6 +219,15 @@ public class Team{
 			message = "\nEl rango en el que el numero de camiseta de un jugador debe encontrarse es entre 1 y 99";
 		} return message;	
 	}
+
+	/**
+	* This method looks for an employee in the members of a team. <br>
+	* <b>name</b>: findMember.<br>
+	* <b>pre</b>: the variable id is already inicializated. <br>
+ 	* <b>post</b>: the employee was founded or not in the members of the team. <br>
+ 	* @param id is an String variable that contains the id of an employee. 
+ 	* @return String <code> message </code> that is variable with a notice for the user.
+	*/
 
 	public String findMember(String id){
 		String message = "\nEl empleado pertenece al equipo";
@@ -137,6 +250,15 @@ public class Team{
 		} return message;	
 	}
 
+	/**
+	* This method adds a player in a team. <br>
+	* <b>name</b>: addPlayer.<br>
+	* <b>pre</b>: the object newPlayer is already inicializated. <br>
+ 	* <b>post</b>: the player was added successfully or the player couldn't be added to a team. <br>
+ 	* @param newPlayer is an object of type Player that is going to be added to a team. 
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
+
 	public String addPlayer(Player newPlayer){
 		String message = "\nEl jugador ha sido asignado al equipo y registrado en el club exitosamente";
 		boolean add = false;
@@ -152,6 +274,15 @@ public class Team{
 		} return message;	
 	}
 
+	/**
+	* This method adds a main coach in a team. <br>
+	* <b>name</b>: addMainCoach.<br>
+	* <b>pre</b>: the object newMCoach is already inicializated. <br>
+ 	* <b>post</b>: the main coach was added successfully or the main coach couldn't be added to a team. <br>
+ 	* @param newMCoach is an object of type MainCoach that is going to be added to a team. 
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
+
 	public String addMainCoach(MainCoach newMCoach){
 		String message = "\nEl entrenador principal ha sido asignado al equipo y registrado en el club exitosamente";
 		if(mainCoach==null){
@@ -161,6 +292,15 @@ public class Team{
 		}
 		return message;
 	}
+
+	/**
+	* This method adds a assistant coach in a team. <br>
+	* <b>name</b>: addAssistantCoach.<br>
+	* <b>pre</b>: the object newAssCoach is already inicializated. <br>
+ 	* <b>post</b>: the assistant coach was added successfully or the assistant coach couldn't be added to a team. <br>
+ 	* @param newMCoach is an object of type AssistantCoach that is going to be added to a team. 
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
 
 	public String addAssistantCoach(AssistantCoach newAssCoach){
 		String message = "\nEl entrenador asistente ha sido asignado al equipo y registrado en el club exitosamente";
@@ -176,6 +316,15 @@ public class Team{
 			message = "\nYa han sido agregados todos los entrenadores asistentes posibles al equipo";		
 		} return message;
 	}
+
+	/**
+	* This method removes an employee of a team. <br>
+	* <b>name</b>: deleteEmployee.<br>
+	* <b>pre</b>: the object fireEmployee is already inicializated. <br>
+ 	* <b>post</b>: the employee was removed successfully or the employee couldn't be removed of a team. <br>
+ 	* @param fireEmployee is an object of type Employee that is going to be removed of a team. 
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
 
 	public String deleteEmployee(Employee fireEmployee){
 		String message = "\nEl proceso se realizo exitosamente, el empleado fue despedido";
@@ -211,6 +360,12 @@ public class Team{
 		} 
 		return message;
 	}
+
+	/**
+	* This method adds a player to a dressing room. <br>
+	* <b>name</b>: addPlayersToDressingRoom <br>
+	* <b>post</b>: All the players of a team were successfully added to the dressing room. <br>
+	*/
 
 	public void addPlayersToDressingRoom(){
 		boolean stop = false;
@@ -276,6 +431,13 @@ public class Team{
 		}		
 	}
 
+	/**
+	* This method saves the information of the dressing room of a team in variable that will be shown later to the user. <br>
+	* <b>name</b>: showDressingRoom.<br>
+ 	* <b>post</b>: the information of the dressing room was returned successfully. <br>
+ 	* @return String <code> message </code> that is a variable with the information of the dressing room of a team.
+	*/
+
 	public String showDressingRoom(){
 		String message = "";
 		addPlayersToDressingRoom();
@@ -304,6 +466,13 @@ public class Team{
 		} return message;
 	}
 
+	/**
+	* This method looks for the players who were left without a dressing room. <br>
+	* <b>name</b>: calculatePlayersOut.<br>
+ 	* <b>post</b>: the players who are without a dressing room were returned successfully. <br>
+ 	* @return Player ArrayList <code> playersOut </code> that contains the players who were left without a dressing room.
+	*/
+
 	public ArrayList<Player> calculatePlayersOut(){
 		boolean stop = false;
 		ArrayList<Player> playersOut = new ArrayList<>();
@@ -312,15 +481,31 @@ public class Team{
 			for(int x = 0;x<SEVEN && !stop;x++){
 				for(int i = 0;i<SIX && !stop;i++){
 					if(dressingRoom[x][i]!=null && players[k]!=null){
-						if(!(dressingRoom[x][i].getName().equals(players[k].getName()))){
-							playersOut.add(players[k]);
+						if(dressingRoom[x][i].getId().equals(players[k].getId())){
 							stop = true;
 						}
 					}
 				}
 			} 
-		} return playersOut;
+			if(!stop && players[k]!=null){
+				playersOut.add(players[k]);
+			}
+		} 
+		return playersOut;
 	}
+
+	/**
+	* This method adds a lineup of a team. <br>
+	* <b>name</b>: addNewLineup.<br>
+	* <b>pre</b>: the variables such as date, tactic, defenses, midfielders and forwards are already inicializated. <br>
+ 	* <b>post</b>: the lineup of a team was added successfully to the ArrayList of lineups. <br>
+ 	* @param date is a String variable that contains the date when a lineup was implemented by a team.
+	* @param tactic is a integer variable that represents the tactic that is used in a lineup.
+	* @param defenses is a integer variable that contains the number of players that are going to be in the line of defense at the formation.
+	* @param midfielders is a integer variable that contains the number of players that are going to be in the line of midfielders at the formation.
+	* @param forwards is a list of PlayList objects that contains the number of players that are going to be in the line of forwards at the formation.
+ 	* @return String <code> message </code> that is a variable with the formation that was used in a lineup.
+	*/
 
 	public String addNewLineup(String date, int tactic, int defenses, int midfielders, int forwards){
 		Lineup newLineup = new Lineup(date, tactic);
@@ -330,10 +515,10 @@ public class Team{
 	}
 
 	/**
-	* This method produces a String with the information of a private playlist. <br>
+	* This method produces a String with all the information of a team. <br>
 	* <b>name</b>: toString.<br>
- 	* <b>post</b>: the information of the playlist was returned. <br>
- 	* @return out in a <code> String </code> variable all information of a private playlist.
+ 	* <b>post</b>: All the information of a team was returned. <br>
+ 	* @return out in a <code> String </code> variable all the information of a team.
 	*/
 
 	public String toString(){

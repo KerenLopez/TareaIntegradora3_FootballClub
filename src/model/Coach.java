@@ -3,7 +3,7 @@ package model;
 public abstract class Coach extends Employee{
 
 	//Atributes
-	protected int yearsExperience;
+	private int yearsExperience;
 
 	//Getters and Setters 
 
@@ -18,10 +18,10 @@ public abstract class Coach extends Employee{
 	}
 
 	/**
-	* this method modifies the years of experience that a coach has. <br>
+	* This method modifies the years of experience that a coach has. <br>
 	* <b>name</b>: setYearsExperience <br>
 	* <b>post</b>: the years of experience of a coach has been changed. <br>
-	* @param years is an integer variable.
+	* @param yearsExperience is an integer variable.
 	*/
 
 	public void setYearsExperience(int yearsExperience){
@@ -30,13 +30,13 @@ public abstract class Coach extends Employee{
 
 	/**
 	* Builder method <br>
-	* <b>name</b>: PrivatePL <br>
-	* <b>pre</b>: the variable name, the object pAuthorizedUser and the lists like minutes and seconds are already inicializated. <br>
-	* <b>post</b>: the atributes of the class were inicializated. <br>
-	* @param name is a String variable that contains the name of a playlist.
-	* @param minutes is a list of integers that contains the minutes that all the songs of a playlist lasts.
-	* @param seconds is a list of integers that contains the seconds that all the songs of a playlist lasts.
-	* @param pAuthorizedUser is an User object that contains the information of the only user that can access to the playlist.
+	* <b>name</b>: Coach <br>
+	* <b>pre</b>: the variables name, id, salary and yearsExperience are already inicializated. <br>
+	* <b>post</b>: the atribute of the class was inicializated. <br>
+	* @param name is a String variable that contains the name of a coach.
+	* @param id is a String variable that contains the identificacion of a coach.
+	* @param salary is a double variable that contains the value of the coach's salary.
+	* @param yearsExperience is an integer variable that contains the coach's number years of experience.
 	*/
 
 	public Coach (String name, String id, double salary, int yearsExperience){
@@ -45,10 +45,10 @@ public abstract class Coach extends Employee{
 	}
 
 	/**
-	* This method produces a String with the information of a private playlist. <br>
+	* This method produces a String with the information of a coach. <br>
 	* <b>name</b>: toString.<br>
- 	* <b>post</b>: the information of the playlist was returned. <br>
- 	* @return out in a <code> String </code> variable all information of a private playlist.
+ 	* <b>post</b>: the information of a coach was returned. <br>
+ 	* @return out in a <code> String </code> variable all information of a coach.
 	*/
 
 	@Override

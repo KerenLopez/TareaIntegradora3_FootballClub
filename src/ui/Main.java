@@ -30,6 +30,12 @@ public class Main{
 		} while(option!= 11);
 	}
 
+	/**
+	* This method asks for all the features of the club to register them <br>
+	* <b>name</b>: createClub <br>
+	* <b>post</b>: All the information that is necessary to register the club was asked to the user. <br>
+	*/
+
 	public void createClub(){
 		String name, nit, date;
 		System.out.println(
@@ -46,6 +52,12 @@ public class Main{
 		date = lector.nextLine();
 		mainFootballClub = new FootballClub(name, nit, date);	
 	}
+
+	/**
+	* This method asks for all the features of both teams to register them <br>
+	* <b>name</b>: createClub <br>
+	* <b>post</b>: All the information that is necessary to register the teams was asked to the user. <br>
+	*/
 
 	public void createTeams(){
 		String name, nit, date, teamA, teamB, message;
@@ -66,7 +78,7 @@ public class Main{
 	* This method displays a menu and appeals to other methods depending on the option chosen by the user. <br>
 	* <b>name</b>: menu.<br>
  	* <b>post</b>: the option that the user chose was returned. <br>
- 	* @return integer <code> option </code> that is a variable with a number that the user selected.
+ 	* @return integer <code> option </code> that is a variable with a number selected by the user.
 	*/
 
 	public int menu(){
@@ -142,6 +154,12 @@ public class Main{
 			} 	
 		} return option;
     }
+
+    /**
+	* This method asks for all the features of an employee to hire him/her. <br>
+	* <b>name</b>: hireEmployee.<br>
+ 	* <b>post</b>: All the information that is necessary to hire an employee was asked. <br>
+	*/
 
     public void hireEmployee(){
     	String name = "", id = "", team = "", nameChampionship = "", message = "";
@@ -269,6 +287,12 @@ public class Main{
     	}
     }
 
+    /**
+	* This method asks for all features required to fire an employee. <br>
+	* <b>name</b>: fireEmployee.<br>
+ 	* <b>post</b>: All the information that is necessary to fire an employee was asked. <br>
+	*/
+
     public void fireEmployee(){
     	String message, id, team;
     	System.out.println(
@@ -283,6 +307,12 @@ public class Main{
     	message = mainFootballClub.deleteEmployee(id, team);
     	System.out.println(message); 
     }
+
+    /**
+	* This method asks for all the information required to update an employee's features. <br>
+	* <b>name</b>: updateEmployee.<br>
+ 	* <b>post</b>: All the information that is necessary to update the features of an employee was asked. <br>
+	*/   
 
     public void updateEmployee(){
     	String id = "", nameChampionship = "", message = "", team = "";
@@ -490,6 +520,12 @@ public class Main{
     	}
     }
 
+    /**
+	* This method asks for all the information required to update a team's features. <br>
+	* <b>name</b>: updateTeam.<br>
+ 	* <b>post</b>: All the information that is necessary to update the features of a team was asked. <br>
+	*/
+
     public void updateTeam(){
     	String nameTeam, newName, message, date;
     	int defenses, midfielders, forwards, sum, tactic;
@@ -581,6 +617,12 @@ public class Main{
     	}
     }
 
+    /**
+	* This method shows all the employees of the club and their information. <br>
+	* <b>name</b>: displayEmployees.<br>
+ 	* <b>post</b>: the information of all the employees of the club were shown. <br>
+	*/
+
     public void displayEmployees(){
 		String message = mainFootballClub.showEmployees();
 		System.out.println(
@@ -591,6 +633,12 @@ public class Main{
 		);
 	}
 
+	/**
+	* This method shows both teams of the club and all their information. <br>
+	* <b>name</b>: displayTeams.<br>
+ 	* <b>post</b>: The information of the two teams of the club were shown. <br>
+	*/
+
 	public void displayTeams(){
 		String message = mainFootballClub.showTeams();
 		System.out.println(
@@ -600,6 +648,12 @@ public class Main{
 			message
 		);
 	}
+
+	/**
+	* This method shows all the information of a specific employee of the club. <br>
+	* <b>name</b>: displayAnEmployee.<br>
+ 	* <b>post</b>: the information of a specific employee of the club was shown. <br>
+	*/
 
 	public void displayAnEmployee(){
 		String id, message;
@@ -614,6 +668,12 @@ public class Main{
 		System.out.println(message);
 	}
 
+	/**
+	* This method shows all the information of a specific team of the club. <br>
+	* <b>name</b>: displayATeam.<br>
+ 	* <b>post</b>: the information of a specific team of the club was shown. <br>
+	*/
+
 	public void displayATeam(){
 		String name, message;
 		System.out.println(
@@ -627,6 +687,12 @@ public class Main{
 		System.out.println(message);
 	}
 
+	/**
+	* This method shows all the information about the facilities of the club. <br>
+	* <b>name</b>: displayInfoFacilities.<br>
+ 	* <b>post</b>: the information about the facilities of the club was shown. <br>
+	*/
+
 	public void displayInfoFacilities(){
 		String message = mainFootballClub.showFacilities();
 		System.out.println(
@@ -636,6 +702,12 @@ public class Main{
 			message
 		);
 	}
+
+	/**
+	* This method shows all the information about the club. <br>
+	* <b>name</b>: showAllInfoClub.<br>
+ 	* <b>post</b>: the information about the club was shown. <br>
+	*/
 
 	public void showAllInfoClub(){
 		String message = mainFootballClub.toString()+mainFootballClub.showEmployees()+mainFootballClub.showTeams()+mainFootballClub.showFacilities();

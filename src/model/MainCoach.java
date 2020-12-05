@@ -13,9 +13,9 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 	//Getters and Setters 
 
 	/**
-	* This method returns the number of shirt that a player has. <br>
-	* <b>name</b>: getNumShirt <br>
-	* @return integer <code> numShirt </code> that is a variable with the number of shirt that a player has.
+	* This method returns the number of teams that a main coach has been in charge during his career. <br>
+	* <b>name</b>: getNumTeams <br>
+	* @return integer <code> numTeams</code> that is a variable with the number of teams that a main coach has been in charge during his career.
 	*/
 
 	public int getNumTeams(){
@@ -23,9 +23,9 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 	}
 
 	/**
-	* this method modifies the number of shirt that a player has. <br>
-	* <b>name</b>: setNumShirt <br>
-	* <b>post</b>: the number of shirt of a player has been changed. <br>
+	* This method modifies the number of teams that a main coach has been in charge during his career. <br>
+	* <b>name</b>: setNumTeams <br>
+	* <b>post</b>: the number of teams that a main coach has been in charge during his career has been changed. <br>
 	* @param numTeams is an integer variable.
 	*/
 
@@ -34,9 +34,9 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 	}
 
 	/**
-	* This method returns the number of shirt that a player has. <br>
-	* <b>name</b>: getNumShirt <br>
-	* @return integer <code> numShirt </code> that is a variable with the number of shirt that a player has.
+	* This method returns the number of championships that a coach has achieved during his career. <br>
+	* <b>name</b>: getNumChampionships <br>
+	* @return integer <code> numChhampionships </code> that is a variable with the number of championships that a coach has achieved during his career.
 	*/
 
 	public int getNumChampionships(){
@@ -44,9 +44,9 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 	}
 
 	/**
-	* this method modifies the number of shirt that a player has. <br>
-	* <b>name</b>: setNumShirt <br>
-	* <b>post</b>: the number of shirt of a player has been changed. <br>
+	* This method modifies the number of championships that a coach has achieved during his career. <br>
+	* <b>name</b>: setNumChampionships <br>
+	* <b>post</b>: championships that a coach has achieved during his career has been changed. <br>
 	* @param numChampionships is an integer variable.
 	*/
 
@@ -54,18 +54,31 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 		this.numChampionships = numChampionships;
 	}
 
+	/**
+	* This method returns the names of all the championships that a coach has achieved during his career. <br>
+	* <b>name</b>: getChampionships <br>
+	* @return ArrayList of Strings <code> championships </code> that contains all the names of the championships that a coach has achieved during his career.
+	*/
+
 	public ArrayList<String> getChampionships(){
 		return championships;
 	}
+
+	/**
+	* This method modifies the names of all the championships that a coach has achieved during his career. <br>
+	* <b>name</b>: setChampionships<br>
+	* <b>post</b>: the names of all the championships that a coach has achieved during his career has been changed. <br>
+	* @param championships is an ArrayList of Strings.
+	*/
 
 	public void setChampionships(ArrayList<String> championships){
 		this.championships = championships;
 	}
 
 	/**
-	* This method returns the market price of a player. <br>
+	* This method returns the market price of a main coach. <br>
 	* <b>name</b>: getMarketPrice <br>
-	* @return double <code> marketPrice </code> that is variable with the market price of a player.
+	* @return double <code> marketPrice </code> that is variable with the market price of a main coach.
 	*/
 
 	public double getMarketPrice(){
@@ -73,9 +86,9 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 	}
 
 	/**
-	* this method modifies the market price of a player. <br>
+	* This method modifies the market price of a main coach. <br>
 	* <b>name</b>: setMarketPrice<br>
-	* <b>post</b>: the market price of a player has been changed. <br>
+	* <b>post</b>: the market price of a main coach has been changed. <br>
 	* @param marketPrice is a double variable.
 	*/
 
@@ -84,9 +97,9 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 	}
 
 	/**
-	* This method returns the level of a player as a star inside the world of soccer. <br>
+	* This method returns the level of a main coach as a star inside the world of soccer. <br>
 	* <b>name</b>: getLevel <br>
-	* @return double <code> level </code> that is variable with the level of a player as a star inside the world of soccer.
+	* @return double <code> level </code> that is variable with the level of a main coach as a star inside the world of soccer.
 	*/
 
 	public double getLevel(){
@@ -94,9 +107,9 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 	}
 
 	/**
-	* this method modifies the level of a player as a star within the world of soccer. <br>
+	* This method modifies the level of a main coach as a star inside the world of soccer. <br>
 	* <b>name</b>: setLevel<br>
-	* <b>post</b>: the level of a player as a star within the world of soccer has been changed. <br>
+	* <b>post</b>: the level of a main coach as a star inside the world of soccer has been changed. <br>
 	* @param level is a double variable.
 	*/
 
@@ -106,13 +119,16 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 
 	/**
 	* Builder method <br>
-	* <b>name</b>: PrivatePL <br>
-	* <b>pre</b>: the variable name, the object pAuthorizedUser and the lists like minutes and seconds are already inicializated. <br>
-	* <b>post</b>: the atributes of the class were inicializated. <br>
-	* @param name is a String variable that contains the name of a playlist.
-	* @param minutes is a list of integers that contains the minutes that all the songs of a playlist lasts.
-	* @param seconds is a list of integers that contains the seconds that all the songs of a playlist lasts.
-	* @param pAuthorizedUser is an User object that contains the information of the only user that can access to the playlist.
+	* <b>name</b>: MainCoach <br>
+	* <b>pre</b>: the variables name, id, salary, yearsExperience, numTeams, numChampionships and the ArrayList of championships are already inicializated. <br>
+	* <b>post</b>: All the atributes of the class were inicializated. <br>
+	* @param name is a String variable that contains the name of a main coach.
+	* @param id is a String variable that contains the identificacion of a main coach.
+	* @param salary is a double variable that contains the value of the main coach's salary.
+	* @param yearsExperience is an integer variable that contains the main coach's number years of experience.
+	* @param numTeams is an integer variable that contains the number of teams that a main coach has been in charge during his career.
+	* @param numChampionships is an integer variable that contains the number of championships that a main coach has achieved during his career.
+	* @param championships is an ArrayList of Strings that contains the names of all the championships that a main coach has achieved during his career.
 	*/
 
 	public MainCoach(String name, String id, double salary, int yearsExperience, int numTeams, int numChampionships, ArrayList<String> championships){
@@ -124,11 +140,25 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 		level = 0;
 	}
 
+	/**
+	* This method calculates the market price of a main coach. <br>
+	* <b>name</b>: coachMarketPrice.<br>
+ 	* <b>post</b>: the market price of a main coach was calculated. <br>
+ 	* @return double <code> marketPrice </code> that is a variable with the market price of a main coach.
+	*/
+
 	@Override
 	public double coachMarketPrice(){
-		marketPrice = (salary*10)+(yearsExperience*100)+(numChampionships*50); 
+		marketPrice = (getSalary()*10)+(getYearsExperience()*100)+(numChampionships*50); 
 		return marketPrice;
 	}
+
+	/**
+	* This method calculates the level of a main coach as a star inside the world of soccer. <br>
+	* <b>name</b>: coachLevel.<br>
+ 	* <b>post</b>: the level of a main coach as a star inside the world of soccer was calculated. <br>
+ 	* @return double <code> level </code> that is a variable with the level of a main coach as a star inside the world of soccer.
+	*/
 
 	@Override
 	public double coachLevel(){
@@ -137,10 +167,10 @@ public class MainCoach extends Coach implements MarketPriceAndLevelMainCoach{
 	}
 
 	/**
-	* This method produces a String with the information of a private playlist. <br>
+	* This method produces a String with the information of a main coach. <br>
 	* <b>name</b>: toString.<br>
- 	* <b>post</b>: the information of the playlist was returned. <br>
- 	* @return out in a <code> String </code> variable all information of a private playlist.
+ 	* <b>post</b>: the information of a main coach was returned. <br>
+ 	* @return out in a <code> String </code> variable all information of a main coach.
 	*/
 
 	@Override

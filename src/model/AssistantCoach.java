@@ -7,18 +7,18 @@ public class AssistantCoach extends Coach{
 	public final static String YES = "si";
 	public final static String NO = "no";
 
-	//Atributes
+	//Atribute
 	private String professionalPlayer;
 
-	//Relationships
+	//Relationship
 	private ArrayList<Expertise> expertises;
 
 	//Getters and Setters 
 
 	/**
-	* This method returns the name of an employee. <br>
-	* <b>name</b>: getName <br>
-	* @return String <code> name </code> that is a variable with the name of an employee.
+	* This method returns yes or no depending on whether the assistant coach has ever been a professional player. <br>
+	* <b>name</b>: getProfessionalPlayer <br>
+	* @return String <code> professionalPlayer </code> that is a variable that contains yes or no depending on whether the assistant coach has ever been a professional player.
 	*/
 
 	public String getProfessionalPlayer(){
@@ -26,20 +26,32 @@ public class AssistantCoach extends Coach{
 	}
 
 	/**
-	* this method modifies the name of an employee. <br>
-	* <b>name</b>: setName <br>
-	* <b>post</b>: the name of an employee has been changed. <br>
-	* @param name is a String variable.
+	* This method modifies if the assistant coach has ever been a professional player or not. <br>
+	* <b>name</b>: setProfessionalPlayer <br>
+	* <b>post</b>: the atribute of professional player has been changed. <br>
+	* @param professionalPlayer is a String variable.
 	*/
 
 	public void setProfessionalPlayer(String professionalPlayer){
 		this.professionalPlayer = professionalPlayer;
 	}
 
+	/**
+	* This method returns all the expertises of an assistant coach. <br>
+	* <b>name</b>: getExpertises <br>
+	* @return ArrayList of Expertise <code> expertises </code> that contains all the expertises of an assistant coach.
+	*/
 
 	public ArrayList<Expertise> getExpertises(){
 		return expertises;
 	}
+
+	/**
+	* This method modifies the expertises of an assistant coach. <br>
+	* <b>name</b>: setExpertises<br>
+	* <b>post</b>: the expertises of an assistant coach has been changed. <br>
+	* @param expertises is an ArrayList of type Expertise.
+	*/
 
 	public void setExpertises(ArrayList<Expertise> expertises){
 		this.expertises = expertises;
@@ -47,13 +59,15 @@ public class AssistantCoach extends Coach{
 
 	/**
 	* Builder method <br>
-	* <b>name</b>: PrivatePL <br>
-	* <b>pre</b>: the variable name, the object pAuthorizedUser and the lists like minutes and seconds are already inicializated. <br>
-	* <b>post</b>: the atributes of the class were inicializated. <br>
-	* @param name is a String variable that contains the name of a playlist.
-	* @param minutes is a list of integers that contains the minutes that all the songs of a playlist lasts.
-	* @param seconds is a list of integers that contains the seconds that all the songs of a playlist lasts.
-	* @param pAuthorizedUser is an User object that contains the information of the only user that can access to the playlist.
+	* <b>name</b>: AssistantCoach <br>
+	* <b>pre</b>: the variables name, id, salary, yearsExperience, professional player and the ArrayList of expertises are already inicializated. <br>
+	* <b>post</b>: the atribute and the relationship of the class were inicializated. <br>
+	* @param name is a String variable that contains the name of an assistant coach coach.
+	* @param id is a String variable that contains the identificacion of a assistant coach.
+	* @param salary is a double variable that contains the value of the assistant coach's salary.
+	* @param yearsExperience is an integer variable that contains the assistant coach's number years of experience.
+	* @param professionalPlayer is an integer variable that represents if the assistant coach has ever been a professional player or not.
+	* @param expertises is an ArrayList of integers that represents the expertises of an assistant coach.
 	*/
 
 	public AssistantCoach(String name, String id, double salary, int yearsExperience, int professionalPlayer, ArrayList<Integer> expertises){
@@ -88,6 +102,15 @@ public class AssistantCoach extends Coach{
 		}	
 	}
 
+	/**
+	* This method looks for an expertise in the list of expertises. <br>
+	* <b>name</b>: findExpertise.<br>
+	* <b>pre</b>: the variable newExpertise is already inicializated. <br>
+ 	* <b>post</b>: A boolean variable was returned. <br>
+ 	* @param newExpertise is an Expertise object that represents an expertise of an assistant coach. 
+ 	* @return boolean <code> find </code> that is a variable that could be true or false.
+	*/
+
 	public boolean findExpertise(Expertise newExpertise){
 		boolean find = false;
 		for(int i=0;i<expertises.size() && !find;i++){
@@ -96,6 +119,13 @@ public class AssistantCoach extends Coach{
 			}
 		} return find;
 	}
+
+	/**
+	* This method updates the expertises of an assistant coach. <br>
+	* <b>name</b>: updateExpertises <br>
+	* <b>post</b>: the expertises of an assistant coach were successfully updated. <br>
+	* @param cExpertises is an ArrayList of integers that represents the expertises that an assistant coach can have. cExpertises!=null
+	*/
 
 	public void updateExpertises(ArrayList<Integer> cExpertises){
 		ArrayList<Expertise> newExpertises = new ArrayList<>();
@@ -130,10 +160,10 @@ public class AssistantCoach extends Coach{
 	}
 
 	/**
-	* This method produces a String with the information of a private playlist. <br>
+	* This method produces a String with the information of an assistant coach. <br>
 	* <b>name</b>: toString.<br>
- 	* <b>post</b>: the information of the playlist was returned. <br>
- 	* @return out in a <code> String </code> variable all information of a private playlist.
+ 	* <b>post</b>: the information of an assistant coach was returned. <br>
+ 	* @return out in a <code> String </code> variable all the information of an assistant coach.
 	*/
 
 	@Override

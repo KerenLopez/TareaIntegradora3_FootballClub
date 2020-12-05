@@ -3,7 +3,7 @@ import java.util.*;
 
 public class FootballClub{
 
-	//Constant
+	//Constants
 	public final static int NUM_TEAMS = 2;
 	public final static int SIX = 6;
 
@@ -21,9 +21,9 @@ public class FootballClub{
 	//Getters and Setters 
 
 	/**
-	* This method returns the name of a user. <br>
-	* <b>name</b>: getUserName <br>
-	* @return String <code> userName </code> that is a variable with the name of a user.
+	* This method returns the name of the club. <br>
+	* <b>name</b>: getName <br>
+	* @return String <code> name </code> that is a variable with the name of the club.
 	*/
 
 	public String getName(){
@@ -31,9 +31,9 @@ public class FootballClub{
 	}
 
 	/**
-	* this method modifies the name of a user. <br>
-	* <b>name</b>: setUserName <br>
-	* <b>post</b>: the name of the user has been changed. <br>
+	* this method modifies the name of the club. <br>
+	* <b>name</b>: setName <br>
+	* <b>post</b>: the name of the club has been changed. <br>
 	* @param name is a String variable.
 	*/
 
@@ -42,9 +42,9 @@ public class FootballClub{
 	}
 
 	/**
-	* This method returns the title of a song. <br>
-	* <b>name</b>: getTitle <br>
-	* @return String <code> title </code> that is variable with the title of a song.
+	* This method returns the NIT of the club. <br>
+	* <b>name</b>: getNit <br>
+	* @return String <code> nit </code> that is variable with the NIT of the club.
 	*/
 
 	public String getNit(){
@@ -52,10 +52,10 @@ public class FootballClub{
 	}
 
 	/**
-	* this method modifies the title of a song. <br>
-	* <b>name</b>: setTitle <br>
-	* <b>post</b>: the title of the song has been changed. <br>
-	* @param pTitle is a String variable.
+	* this method modifies the NIT of the club. <br>
+	* <b>name</b>: setNit <br>
+	* <b>post</b>: the NIT of the club has been changed. <br>
+	* @param nit is a String variable.
 	*/
 
 	public void setNit(String nit){
@@ -63,9 +63,9 @@ public class FootballClub{
 	}
 
 	/**
-	* This method returns the title of a song. <br>
-	* <b>name</b>: getTitle <br>
-	* @return String <code> title </code> that is variable with the title of a song.
+	* This method returns the date when the club was founded <br>
+	* <b>name</b>: getFoundationDate <br>
+	* @return String <code> foundationDate </code> that is variable with the date when the club was founded.
 	*/
 
 	public String getFoundationDate(){
@@ -73,9 +73,9 @@ public class FootballClub{
 	}
 
 	/**
-	* this method modifies the title of a song. <br>
-	* <b>name</b>: setTitle <br>
-	* <b>post</b>: the title of the song has been changed. <br>
+	* this method modifies the date when the club was founded. <br>
+	* <b>name</b>: setFoundationDate <br>
+	* <b>post</b>: the date when the club was founded has been changed. <br>
 	* @param foundationDate is a String variable.
 	*/
 
@@ -84,9 +84,51 @@ public class FootballClub{
 	}
 
 	/**
-	* This method returns the genres of a playlist in the manager as list of Genre constants. <br>
-	* <b>name</b>: getGenres <br>
-	* @return Genre <code> genres[] </code> that is a list with all the genres of a playlist.
+	* This method returns the team A. <br>
+	* <b>name</b>: getTeamA <br>
+	* @return Team <code> teamA </code> that is an object that represents the team A.
+	*/
+
+	public Team getTeamA(){
+		return teamA;
+	}
+
+	/**
+	* This method modifies the team A. <br>
+	* <b>name</b>: setTeamA<br>
+	* <b>post</b>: the team A has been changed. <br>
+	* @param teamA is an object of type Team.
+	*/
+
+	public void setTeamA(Team teamA){
+		this.teamA = teamA;
+	}
+
+	/**
+	* This method returns the team B. <br>
+	* <b>name</b>: getTeamB <br>
+	* @return Team <code> teamB </code> that is an object that represents the team B.
+	*/
+
+	public Team getTeamB(){
+		return teamB;
+	}
+
+	/**
+	* This method modifies the team B. <br>
+	* <b>name</b>: setTeamB<br>
+	* <b>post</b>: the team B has been changed. <br>
+	* @param teamB is an object of type Team.
+	*/
+
+	public void setTeamB(Team teamB){
+		this.teamB = teamB;
+	}
+
+	/**
+	* This method returns the club's office of coaches. <br>
+	* <b>name</b>: getOffice <br>
+	* @return Coach[][] <code> office </code> that is a matrix of coaches that represents how they are located in their office.
 	*/
 
 	public Coach[][] getOffice(){
@@ -94,21 +136,34 @@ public class FootballClub{
 	}
 
 	/**
-	* this method modifies the genres of a playlist. <br>
-	* <b>name</b>: setGenres <br>
-	* <b>post</b>: the genres of a playlist has been changed. <br>
-	* @param pGenres is a list of Genre constants.
+	* this method modifies the club's office of coaches. <br>
+	* <b>name</b>: setOffices <br>
+	* <b>post</b>: the club's office of coaches has been changed. <br>
+	* @param office is a matrix of Coaches.
 	*/
 
 	public void setOffice(Coach[][] office){
 		this.office = office;
 	}
 
+	/**
+	* This method returns all the employees of the club. <br>
+	* <b>name</b>: getEmployees <br>
+	* @return ArrayList of Employee <code> employees </code> that contains all the employees of the club.
+	*/
+
 	public ArrayList<Employee> getEmployees(){
 		return employees;
 	}
 
-	public void setElements(ArrayList<Employee> employees){
+	/**
+	* This method modifies the employees of the club. <br>
+	* <b>name</b>: setEmployees<br>
+	* <b>post</b>: the employees of the club has been changed. <br>
+	* @param employees is an ArrayList of type Employee.
+	*/
+
+	public void setEmployees(ArrayList<Employee> employees){
 		this.employees = employees;
 	}
 
@@ -116,8 +171,12 @@ public class FootballClub{
 
 	/**
 	* Builder method <br>
-	* <b>name</b>: FootballClub <br>
-	* <b>post</b>: The atributes and relationships of the class were inicializated. <br>
+	* <b>name</b>: FootballClub<br>
+	* <b>pre</b>: the variables name, nit and date are already inicializated. <br>
+	* <b>post</b>: All the atributes and some relationships of the class were inicializated. <br>
+	* @param name is a String variable that contains the name of the club.
+	* @param nit is a String variable that contains the NIT of the club.
+	* @param date is a String variable that contains the date of foundation of the club.
 	*/
 
 	public FootballClub(String name, String nit, String date){
@@ -129,12 +188,13 @@ public class FootballClub{
 	}
 
 	/**
-	* This method looks for the name of a user in the list of registered users, and returns an object of type User. <br>
+	* This method creates a team with all its features. <br>
 	* <b>name</b>: createTeam.<br>
-	* <b>pre</b>: the variable nameUser is already inicializated. <br>
- 	* <b>post</b>: An object of type User was returned. <br>
- 	* @param nameTeam is a String variable that contains the name of the user. 
- 	* @return User <code> objUser </code> that is an object that could be null or full.
+	* <b>pre</b>: the variables nameTeam and id are already inicializated. <br>
+ 	* <b>post</b>: the team was created successfully or not. <br>
+ 	* @param nameTeam is a String variable that contains the name of a team.
+ 	* @param id is a char variable that contains the ID of a team.
+ 	* @return String <code> message </code> that is a variable with a notice for the user. 
 	*/
 
 	public String createTeam(String nameTeam, char id){
@@ -153,9 +213,9 @@ public class FootballClub{
 	/**
 	* This method looks for an specific employee in the list of registered employees, and returns an object of type Employee. <br>
 	* <b>name</b>: findEmployee.<br>
-	* <b>pre</b>: the variable nameEmployee is already inicializated. <br>
+	* <b>pre</b>: the variable id is already inicializated. <br>
  	* <b>post</b>: An object of type Employee was returned. <br>
- 	* @param id is a String variable that contains the name of an employee. 
+ 	* @param id is a String variable that contains the ID of an employee. 
  	* @return Employee <code> findEmployee </code> that is an object that could be null or full.
 	*/
 
@@ -171,16 +231,16 @@ public class FootballClub{
 	}
 
 	/**
-	* This method creates a new employee with its features, and adds it to the list of users. <br>
+	* This method creates a new employee with its features, and adds it to the ArrayList of employees. <br>
 	* <b>name</b>: addEmployee.<br>
-	* <b>pre</b>: the variables userName, password, and age are already inicializated. <br>
- 	* <b>post</b>: the user was created successfully or the user couldn't be created. <br>
- 	* @param nameEmployee is a String variable that contains the name of the user. 
- 	* @param id is a String variable that contains the password of the user.
- 	* @param salary is an integer variable that contains the age of the user.
- 	* @param numShirt an integer variable that contains the age of the user.
- 	* @param team is an integer variable that contains the age of the user.
- 	* @param position is an integer variable that contains the age of the user.
+	* <b>pre</b>: the variables name, id, salary, numShirt, team, averageGrade, and position are already inicializated. <br>
+ 	* <b>post</b>: the employee was hired successfully or the employee couldn't be hired. <br>
+ 	* @param name is a String variable that contains the name of a player. 
+ 	* @param id is a String variable that contains the ID of a player.
+ 	* @param salary is a double variable that contains the salary of a player.
+ 	* @param numShirt an integer variable that contains the number of shirt of a player.
+ 	* @param team is a String variable that contains the name of a team.
+ 	* @param position is an integer variable that represents the position of a player in the soccer field.
  	* @return String <code> message </code> that is a variable with a notice for the user.
 	*/
 
@@ -215,13 +275,18 @@ public class FootballClub{
 	}
 
 	/**
-	* This method creates a new user with its features, and adds it to the list of users. <br>
-	* <b>name</b>: createUser.<br>
-	* <b>pre</b>: the variables userName, password, and age are already inicializated. <br>
- 	* <b>post</b>: the user was created successfully or the user couldn't be created. <br>
- 	* @param userName is a String variable that contains the name of the user. 
- 	* @param password is a String variable that contains the password of the user.
- 	* @param age is an integer variable that contains the age of the user.
+	* This method creates a new employee with its features, and adds it to the ArrayList of employees. <br>
+	* <b>name</b>: addEmployee.<br>
+	* <b>pre</b>: the variables name, id, salary, experience, numTeams, team, numChampionships, and the ArrayList of championships are already inicializated. <br>
+ 	* <b>post</b>: the employee was hired successfully or the employee couldn't be hired. <br>
+ 	* @param name is a String variable that contains the name of a main coach. 
+ 	* @param id is a String variable that contains the ID of a main coach.
+ 	* @param salary is a double variable that contains the salary of a main coach.
+ 	* @param experience is an integer variable that contains the main coach's number years of experience.
+ 	* @param numTeams is an integer variable that contains the number of teams that a main coach has been in charge during his career.
+	* @param team is a String variable that contains the name of a team.
+	* @param numChampionships is an integer variable that contains the number of championships that a main coach has achieved during his career.
+	* @param championships is an ArrayList of Strings that contains the names of all the championships that a main coach has achieved during his career.
  	* @return String <code> message </code> that is a variable with a notice for the user.
 	*/
 
@@ -250,13 +315,17 @@ public class FootballClub{
 	}
 
 	/**
-	* This method creates a new user with its features, and adds it to the list of users. <br>
-	* <b>name</b>: createUser.<br>
-	* <b>pre</b>: the variables userName, password, and age are already inicializated. <br>
- 	* <b>post</b>: the user was created successfully or the user couldn't be created. <br>
- 	* @param userName is a String variable that contains the name of the user. 
- 	* @param password is a String variable that contains the password of the user.
- 	* @param age is an integer variable that contains the age of the user.
+	* This method creates a new employee with its features, and adds it to the ArrayList of employees. <br>
+	* <b>name</b>: addEmployee.<br>
+	* <b>pre</b>: the variables name, id, salary, experience, profession, team, and the ArrayList of expertises are already inicializated. <br>
+ 	* <b>post</b>: the employee was hired successfully or the employee couldn't be hired. <br>
+ 	* @param name is a String variable that contains the name of an assistant coach. 
+ 	* @param id is a String variable that contains the ID of an assistant coach.
+ 	* @param salary is a double variable that contains the salary of an assistant coach.
+ 	* @param experience is an integer variable that contains the assistant coach's number years of experience.
+ 	* @param professionalPlayer is an integer variable that represents if the assistant coach has ever been a professional player or not.
+	* @param expertises is an ArrayList of integers that represents the expertises of an assistant coach.
+	* @param team is a String variable that contains the name of a team.
  	* @return String <code> message </code> that is a variable with a notice for the user.
 	*/
 
@@ -284,6 +353,13 @@ public class FootballClub{
 		} return message;	
 	}
 
+	/**
+	* This method adds a coach to an office of the club. <br>
+	* <b>name</b>: addCoachesToOffices <br>
+	* <b>post</b>: the coach was added successfully to an office of the club. <br>
+	* @param coach is an object of type Coach. coach!=null
+	*/
+
 	public void addCoachesToOffices(Coach coach){
 		boolean stop = false;
 		for(int i=0;i<SIX && !stop;i+=2){
@@ -304,6 +380,16 @@ public class FootballClub{
 			}
 		}			
 	}
+
+	/**
+	* This method fires an employee of the club. <br>
+	* <b>name</b>: deleteEmployee.<br>
+	* <b>pre</b>: the variables id and team are already inicializated. <br>
+ 	* <b>post</b>: the employee was removed successfully or the employee couldn't be removed of the club. <br>
+ 	* @param id is a String variable that contains the ID of an employee.
+ 	* @param team is a String variable that contains the name of a team.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
 
 	public String deleteEmployee(String id, String team){
 		String message = "";
@@ -326,6 +412,17 @@ public class FootballClub{
 			}
 		} return message;	
 	}
+
+	/**
+	* This method changes the salary of an employee. <br>
+	* <b>name</b>: changeSalaryEmployee.<br>
+	* <b>pre</b>: the variables id, newSalary and option are already inicializated. <br>
+ 	* <b>post</b>: the salary of the employee was updated successfully or not. <br>
+ 	* @param id is a String variable that contains the ID of an assistant coach.
+ 	* @param salary is a double variable that contains the salary of an assistant coach.
+ 	* @param option is an integer variable that represents the menu option chosen by the user.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
 
 	public String changeSalaryEmployee(String id, double newSalary, int option){
 		Employee objEmployee = findEmployee(id);
@@ -373,6 +470,18 @@ public class FootballClub{
 		} return message;
 	}
 
+	/**
+	* This method changes the number of shirt of a player. <br>
+	* <b>name</b>: changeNumShirt.<br>
+	* <b>pre</b>: the variables id, team, numShirt and option are already inicializated. <br>
+ 	* <b>post</b>: the number of shirt of a player was updated successfully or not. <br>
+ 	* @param id is a String variable that contains the ID of an assistant coach.
+  	* @param numShirt an integer variable that contains the number of shirt of a player.
+ 	* @param team is a String variable that contains the name of a team.
+ 	* @param option is an integer variable that represents the menu option chosen by the user.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
+
 	public String changeNumShirt(String id, String team, int numShirt, int option){
 		Employee objEmployee = findEmployee(id);
 		String message = "", advice1 = "", advice2 = "";
@@ -410,6 +519,17 @@ public class FootballClub{
 			}
 		} return message;		
 	}
+
+	/**
+	* This method changes the number of goals that a player has scored in the club. <br>
+	* <b>name</b>: changeNumGoals.<br>
+	* <b>pre</b>: the variables id, numGoals and option are already inicializated. <br>
+ 	* <b>post</b>: the number of goals that a player has scored in the club was updated successfully or not. <br>
+ 	* @param id is a String variable that contains the ID of an assistant coach.
+ 	* @param option is an integer variable that represents the menu option chosen by the user.
+ 	* @param option is an integer variable that represents the number of goals that a player has scored in the club.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
 
 	public String changeNumGoals(String id, int numGoals, int option){
 		Employee objEmployee = findEmployee(id);
@@ -627,16 +747,24 @@ public class FootballClub{
 	}
 
 	/**
-	* This method displays the information of all the playlists that were created by the user. <br>
-	* <b>name</b>: showPlaylists.<br>
- 	* <b>post</b>: the information of each song of each playlist was saved in a String variable that is going to be shown in the Main class. <br>
- 	* @return String <code> message </code> that is a variable with all the information of the playlists that were added by a user.
+	* This method displays all the information of the two teams. <br>
+	* <b>name</b>: showTeams.<br>
+ 	* <b>post</b>: the information of each team was returned. <br>
+ 	* @return String <code> message </code> that is a variable with all the information of the teams.
 	*/
 
 	public String showTeams(){
 		String message = teamA.toString()+"\n"+teamB.toString();
 		return message;
 	}
+
+	/**
+	* This method shows all the information of a specific employee of the club. <br>
+	* <b>name</b>: showAnEmployee.<br>
+ 	* <b>post</b>: the information of a specific employee of the club was returned. <br>
+ 	* @param id is a String variable that contains the ID of an employee.
+ 	* @return String <code> message </code> that is a variable with all the information of an employee.
+	*/
 
 	public String showAnEmployee(String id){
 		String message = "";
@@ -647,6 +775,14 @@ public class FootballClub{
 			message = objEmployee.toString();
 		} return message;
 	}
+
+	/**
+	* This method shows all the information of a specific team of the club. <br>
+	* <b>name</b>: showATeam.<br>
+ 	* <b>post</b>: the information of a specific team of the club was returned. <br>
+ 	* @param name is a String variable that contains the name of a team.
+ 	* @return String <code> message </code> that is a variable with all the information of a team.
+	*/
 
 	public String showATeam(String name){
 		String message = "";
@@ -660,6 +796,13 @@ public class FootballClub{
 			message = "\nEl equipo no existe, intentelo nuevamente";
 		} return message;
 	}
+
+	/**
+	* This method shows all the information about the facilities of the club. <br>
+	* <b>name</b>: showFacilities.<br>
+ 	* <b>post</b>: the information about the facilities of the club was returned. <br>
+  	* @return String <code> message </code> that is a variable with all the information about the facilities of the club.
+	*/
 
 	public String showFacilities(){
 		String message = "\nCamerino del equipo A: \n"+teamA.showDressingRoom()+"\nCamerino del equipo B: \n"+teamB.showDressingRoom()+"\nJugadores del equipo B que se quedaron sin camerino: \n";
@@ -679,6 +822,13 @@ public class FootballClub{
 			message+="\n";
 		} return message;
 	}
+
+	/**
+	* This method produces a String with all the atributes of the club. <br>
+	* <b>name</b>: toString.<br>
+ 	* <b>post</b>: All the atributes of the club was returned. <br>
+ 	* @return out in a <code> String </code> variable all the atributes of the club.
+	*/
 
 	public String toString(){
 		return "\n                                          ********************** Club "+name+" ***********************"+"\n                                          **  NIT: "+nit+"\n                                          **  Fecha de fundacion: "+foundationDate;

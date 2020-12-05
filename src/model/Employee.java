@@ -7,10 +7,10 @@ public abstract class Employee{
 	public final static String INACTIVE = "inactivo";
 
 	//Atributes
-	protected String name;
-	protected String id;
-	protected double salary;
-	protected String state;
+	private String name;
+	private String id;
+	private double salary;
+	private String state;
 
 	//Getters and Setters 
 
@@ -25,7 +25,7 @@ public abstract class Employee{
 	}
 
 	/**
-	* this method modifies the name of an employee. <br>
+	* This method modifies the name of an employee. <br>
 	* <b>name</b>: setName <br>
 	* <b>post</b>: the name of an employee has been changed. <br>
 	* @param name is a String variable.
@@ -36,7 +36,7 @@ public abstract class Employee{
 	}
 
 	/**
-	* This method returns the id of a song. <br>
+	* This method returns the id of an employee. <br>
 	* <b>name</b>: getId <br>
 	* @return String <code> id </code> that is variable with the id of an employee.
 	*/
@@ -46,7 +46,7 @@ public abstract class Employee{
 	}
 
 	/**
-	* this method modifies the id of an employee. <br>
+	* This method modifies the id of an employee. <br>
 	* <b>name</b>: setId <br>
 	* <b>post</b>: the id of an employee has been changed. <br>
 	* @param id is a String variable.
@@ -67,7 +67,7 @@ public abstract class Employee{
 	}
 
 	/**
-	* this method modifies the salary of an employee. <br>
+	* This method modifies the salary of an employee. <br>
 	* <b>name</b>: setSalary<br>
 	* <b>post</b>: the salary of an employee has been changed. <br>
 	* @param salary is a double variable.
@@ -88,7 +88,7 @@ public abstract class Employee{
 	}
 
 	/**
-	* this method modifies the state of an employee. <br>
+	* This method modifies the state of an employee. <br>
 	* <b>name</b>: setState <br>
 	* <b>post</b>: the state of an employee has been changed. <br>
 	* @param state is a String variable.
@@ -98,12 +98,29 @@ public abstract class Employee{
 		this.state = state;
 	}
 
+	/**
+	* Builder method <br>
+	* <b>name</b>: Employee <br>
+	* <b>pre</b>: the variables name, id and salary are already inicializated. <br>
+	* <b>post</b>: All the atributes of the class were inicializated. <br>
+	* @param name is a String variable that contains the name of an employee.
+	* @param id is a String variable that contains the identificacion of an employee.
+	* @param salary is a double variable that contains the value of the employee's salary.
+	*/
+
 	public Employee(String name, String id, double salary){
 		this.name = name;
 		this.id = id;
 		this.salary = salary;
 		state = ACTIVE;
 	}
+
+	/**
+	* This method produces a String with all the information about an employee. <br>
+	* <b>name</b>: toString.<br>
+ 	* <b>post</b>: the information of an employee was returned. <br>
+ 	* @return out in a <code> String </code> variable all the information about an employee.
+	*/
 
 	public String toString(){
 		String message = "\n                                          *******************************************************"+

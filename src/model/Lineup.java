@@ -14,15 +14,99 @@ public class Lineup{
 	//Relationships
 	private Tactic lineupTactic;
 
+	//Getters and Setters 
+
+	/**
+	* This method returns the date when a lineup was implemented. <br>
+	* <b>name</b>: getDate <br>
+	* @return String <code> date </code> that is a variable with the date when a lineup was implemented.
+	*/
+
+	public String getDate(){
+		return date;
+	}
+
+	/**
+	* This method modifies the date when a lineup was implemented. <br>
+	* <b>name</b>: setDate <br>
+	* <b>post</b>: the date when a lineup was implemented has been changed. <br>
+	* @param date is a String variable.
+	*/
+
+	public void setDate(String date){
+		this.date = date;
+	}
+
+	/**
+	* This method returns the formation used in a lineup. <br>
+	* <b>name</b>: getFieldFormation <br>
+	* @return String <code> fieldFormation </code> that is variable with the formation of a lineup.
+	*/
+
+	public String getFieldFormation(){
+		return fieldFormation;
+	}
+
+	/**
+	* This method modifies the formation of a lineup. <br>
+	* <b>name</b>: setFieldFormation <br>
+	* <b>post</b>: the formation of a lineup has been changed. <br>
+	* @param fieldFormation is a String variable.
+	*/
+
+	public void setFieldFormation(String fieldFormation){
+		this.fieldFormation = fieldFormation;
+	}
+
+	/**
+	* This method returns the formation used in a lineup as matrix of integers. <br>
+	* <b>name</b>: getFormation <br>
+	* @return integer[][] <code> formation </code> that is a matrix with the formation of a lineup.
+	*/
+
+	public int[][] getFormation(){
+		return formation;
+	}
+
+	/**
+	* This method modifies the formation of a lineup. <br>
+	* <b>name</b>: setFormation <br>
+	* <b>post</b>: the formation of a lineup has been changed. <br>
+	* @param formation is a matrix of integers.
+	*/
+
+	public void setFormation(int[][] formation){
+		this.formation = formation;
+	}
+
+	/**
+	* This method returns the tactic that was implemented in a lineup. <br>
+	* <b>name</b>: getLineupTactic <br>
+	* @return Tactic <code> lineupTactic </code> that is a constant that represents the tactic that was implemented in a lineup.
+	*/
+
+	public Tactic getLineupTactic(){
+		return lineupTactic;
+	}
+
+	/**
+	* this method modifies the tactic that was implemented in a lineup. <br>
+	* <b>name</b>: setLineupTactic<br>
+	* <b>post</b>: the tactic that was implemented in a lineup has been changed. <br>
+	* @param lineupTactic is a constant of type Tactic.
+	*/
+
+	public void setLineupTactic(Tactic lineupTactic){
+		this.lineupTactic = lineupTactic;
+	}
+
 	/**
 	* Builder method <br>
-	* <b>name</b>: PrivatePL <br>
-	* <b>pre</b>: the variable name, the object pAuthorizedUser and the lists like minutes and seconds are already inicializated. <br>
-	* <b>post</b>: the atributes of the class were inicializated. <br>
-	* @param name is a String variable that contains the name of a playlist.
-	* @param minutes is a list of integers that contains the minutes that all the songs of a playlist lasts.
-	* @param seconds is a list of integers that contains the seconds that all the songs of a playlist lasts.
-	* @param pAuthorizedUser is an User object that contains the information of the only user that can access to the playlist.
+	* <b>name</b>: Lineup <br>
+	* <b>pre</b>: the variables name and lineupTactic are already inicializated. <br>
+	* <b>post</b>: some atributes or relationships of the class were inicializated. <br>
+	* @param date is a String variable that contains the date when a lineup was implemented by a team.
+	* @param lineupTactic is a integer variable that represents the tactic that is used in a lineup.
 	*/
 
 	public Lineup(String date, int lineupTactic){
@@ -44,6 +128,15 @@ public class Lineup{
 		}
 	}
 
+	/**
+	* This method adds a new formation of the players of a team. <br>
+	* <b>name</b>: addFormation <br>
+	* <b>post</b>: All the defenses, midfielders and forwards were correctly placed in the soccer field (matrix). <br>
+	* @param defenses is a integer variable that contains the number of players that are going to be in the line of defense.
+	* @param midfielders is a integer variable that contains the number of players that are going to be in the line of midfielders.
+	* @param forwards is a list of PlayList objects that contains the number of players that are going to be in the line of forwards.
+	*/
+
 	public void addFormation(int defenses, int midfielders, int forwards){
 		int x=1;
 		for(int i=TEN-2;i>=0;i-=3){
@@ -64,6 +157,17 @@ public class Lineup{
 			}	
 		}
 	}
+
+	/**
+	* This method shows to the user the formation that was implemented in a lineup. <br>
+	* <b>name</b>: showFormation.<br>
+	* <b>pre</b>: the variables such as defenses, midfielders, and forwards are already inicializated. <br>
+ 	* <b>post</b>: the formation implemented in a lineup was returned succesfully in a String variable. <br>
+ 	* @param defenses is a integer variable that contains the number of players that are going to be in the line of defense.
+	* @param midfielders is a integer variable that contains the number of players that are going to be in the line of midfielders.
+	* @param forwards is a list of PlayList objects that contains the number of players that are going to be in the line of forwards.
+ 	* @return String <code> fieldformation </code> that is a variable with the formation of a lineup.
+	*/
 
 	public String showFormation(int defenses, int midfielders, int forwards){
 		addFormation(defenses,midfielders,forwards);
@@ -88,6 +192,13 @@ public class Lineup{
 		fieldFormation = "La formacion ingresada es: "+numForwards+"-"+numMidfielders+"-"+numDefenses;
 		return fieldFormation;
 	}
+
+	/**
+	* This method produces a String with the information of a lineup. <br>
+	* <b>name</b>: toString.<br>
+ 	* <b>post</b>: the information of a lineup was returned. <br>
+ 	* @return out in a <code> String </code> variable all the information of a lineup.
+	*/
 
 	public String toString(){
 		return "\n                                          *******************************************************"+

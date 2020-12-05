@@ -9,7 +9,7 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 	private double marketPrice;
 	private double level;
 
-	//Relationships
+	//Relationship
 	private Position position;
 
 	//Getters and Setters 
@@ -25,7 +25,7 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 	}
 
 	/**
-	* this method modifies the number of shirt that a player has. <br>
+	* This method modifies the number of shirt that a player has. <br>
 	* <b>name</b>: setNumShirt <br>
 	* <b>post</b>: the number of shirt of a player has been changed. <br>
 	* @param numShirt is an integer variable.
@@ -36,9 +36,9 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 	}
 
 	/**
-	* This method returns the number of goals that a player has scored in a team. <br>
+	* This method returns the number of goals that a player has scored in the club. <br>
 	* <b>name</b>: getNumGoals <br>
-	* @return integer <code> numGoals </code> that is a variable with the number of goals that a player has scored in a team.
+	* @return integer <code> numGoals </code> that is a variable with the number of goals that a player has scored in the club.
 	*/
 
 	public int getNumGoals(){
@@ -46,9 +46,9 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 	}
 
 	/**
-	* this method modifies the number of goals that a player has scored in a team. <br>
+	* This method modifies the number of goals that a player has scored in the club. <br>
 	* <b>name</b>: setNumGoals <br>
-	* <b>post</b>: the number of goals that a player has scored in a team has been changed. <br>
+	* <b>post</b>: the number of goals that a player has scored in the club has been changed. <br>
 	* @param numGoals is an integer variable.
 	*/
 
@@ -67,7 +67,7 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 	}
 
 	/**
-	* this method modifies the average grade of a player. <br>
+	* This method modifies the average grade of a player. <br>
 	* <b>name</b>: setAverageGrade<br>
 	* <b>post</b>: the average grade of a player has been changed. <br>
 	* @param averageGrade is a double variable.
@@ -88,7 +88,7 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 	}
 
 	/**
-	* this method modifies the market price of a player. <br>
+	* This method modifies the market price of a player. <br>
 	* <b>name</b>: setMarketPrice<br>
 	* <b>post</b>: the market price of a player has been changed. <br>
 	* @param marketPrice is a double variable.
@@ -109,9 +109,9 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 	}
 
 	/**
-	* this method modifies the level of a player as a star within the world of soccer. <br>
+	* This method modifies the level of a player as a star inside the world of soccer. <br>
 	* <b>name</b>: setLevel<br>
-	* <b>post</b>: the level of a player as a star within the world of soccer has been changed. <br>
+	* <b>post</b>: the level of a player as a star inside the world of soccer has been changed. <br>
 	* @param level is a double variable.
 	*/
 
@@ -120,9 +120,9 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 	}
 
 	/**
-	* This method returns the position of a player in the field. <br>
+	* This method returns the position of a player in the soccer field. <br>
 	* <b>name</b>: getPosition <br>
-	* @return Position <code> position </code> that is a constant that represents the position of a player in the field.
+	* @return Position <code> position </code> that is a constant that represents the position of a player in the soccer field.
 	*/
 
 	public Position getPosition(){
@@ -130,9 +130,9 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 	}
 
 	/**
-	* this method modifies the position of a player in the field. <br>
+	* This method modifies the position of a player in the soccer field. <br>
 	* <b>name</b>: setPosition<br>
-	* <b>post</b>: the position of a player in the field has been changed. <br>
+	* <b>post</b>: the position of a player in the soccer field has been changed. <br>
 	* @param position is a constant of type Position.
 	*/
 
@@ -142,13 +142,15 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 
 	/**
 	* Builder method <br>
-	* <b>name</b>: PrivatePL <br>
-	* <b>pre</b>: the variable name, the object pAuthorizedUser and the lists like minutes and seconds are already inicializated. <br>
-	* <b>post</b>: the atributes of the class were inicializated. <br>
-	* @param name is a String variable that contains the name of a playlist.
-	* @param minutes is a list of integers that contains the minutes that all the songs of a playlist lasts.
-	* @param seconds is a list of integers that contains the seconds that all the songs of a playlist lasts.
-	* @param pAuthorizedUser is an User object that contains the information of the only user that can access to the playlist.
+	* <b>name</b>: Player <br>
+	* <b>pre</b>: the variables name, id, salary, numShirt, averageGrade and position are already inicializated. <br>
+	* <b>post</b>: the relationship and some atributes of the class were inicializated. <br>
+	* @param name is a String variable that contains the name of a new player.
+	* @param id is a String variable that contains the identificacion of a new player.
+	* @param salary is a double variable that contains the value of the new player's salary.
+	* @param numShirt is an integer variable that contains the new player's number of shirt in a team.
+	* @param averageGrade is a double variable that contains the new player's average grade.
+	* @param position is an integer variable that represents the new player's position in the soccer field.
 	*/
 
 	public Player(String name, String id, double salary, int numShirt, double averageGrade, int position){
@@ -172,29 +174,64 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 		}
 	}
 
+	/**
+	* This method calculates the market price of a goalie. <br>
+	* <b>name</b>: goalieMarketPrice.<br>
+ 	* <b>post</b>: the market price of a goalie was calculated. <br>
+ 	* @return double <code> marketPrice </code> that is a variable with the market price of a goalie.
+	*/
+
 	@Override
 	public double goalieMarketPrice(){
-		marketPrice = (salary*12)+(averageGrade*150);
+		marketPrice = (getSalary()*12)+(averageGrade*150);
 		return marketPrice;
 	}
+
+	/**
+	* This method calculates the market price of a defense. <br>
+	* <b>name</b>: defenseMarketPrice.<br>
+ 	* <b>post</b>: the market price of a defense was calculated. <br>
+ 	* @return double <code> marketPrice </code> that is a variable with the market price of a defense.
+	*/
 
 	@Override
 	public double defenseMarketPrice(){
-		marketPrice = (salary*13)+(averageGrade*125)+(numGoals*100);
+		marketPrice = (getSalary()*13)+(averageGrade*125)+(numGoals*100);
 		return marketPrice;
 	}
+
+	/**
+	* This method calculates the market price of a midfielder. <br>
+	* <b>name</b>: midfielderMarketPrice.<br>
+ 	* <b>post</b>: the market price of a midfielder was calculated. <br>
+ 	* @return double <code> marketPrice </code> that is a variable with the market price of a midfielder.
+	*/
 
 	@Override
 	public double midfielderMarketPrice(){
-		marketPrice = (salary*14)+(averageGrade*135)+(numGoals*125);
+		marketPrice = (getSalary()*14)+(averageGrade*135)+(numGoals*125);
 		return marketPrice;
 	}
 
+	/**
+	* This method calculates the market price of a forward. <br>
+	* <b>name</b>: forwardMarketPrice.<br>
+ 	* <b>post</b>: the market price of a forward was calculated. <br>
+ 	* @return double <code> marketPrice </code> that is a variable with the market price of a forward.
+	*/
+
 	@Override
 	public double forwardMarketPrice(){
-		marketPrice = (salary*12)+(averageGrade*145)+(numGoals*150);
+		marketPrice = (getSalary()*12)+(averageGrade*145)+(numGoals*150);
 		return marketPrice;
 	}
+
+	/**
+	* This method calculates the level of a goalie as a star inside the world of soccer. <br>
+	* <b>name</b>: goalieLevel.<br>
+ 	* <b>post</b>: the level of a goalie as a star inside the world of soccer was calculated. <br>
+ 	* @return double <code> level </code> that is a variable with the level of a goalie as a star inside the world of soccer.
+	*/
 
 	@Override
 	public double goalieLevel(){
@@ -202,17 +239,38 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 		return level;
 	}
 
+	/**
+	* This method calculates the level of a defense as a star inside the world of soccer. <br>
+	* <b>name</b>: defenseLevel.<br>
+ 	* <b>post</b>: the level of a defense as a star inside the world of soccer was calculated. <br>
+ 	* @return double <code> level </code> that is a variable with the level of a defense as a star inside the world of soccer.
+	*/
+
 	@Override
 	public double defenseLevel(){
 		level = (averageGrade*0.9)+(numGoals/100);
 		return level;
 	}
 
+	/**
+	* This method calculates the level of a midfielder as a star inside the world of soccer. <br>
+	* <b>name</b>: midfielderLevel.<br>
+ 	* <b>post</b>: the level of a midfielder as a star inside the world of soccer was calculated. <br>
+ 	* @return double <code> level </code> that is a variable with the level of a midfielder as a star inside the world of soccer.
+	*/
+
 	@Override
 	public double midfielderLevel(){
 		level = (averageGrade*0.9)+(numGoals/90);
 		return level;
 	}
+
+	/**
+	* This method calculates the level of a forward as a star inside the world of soccer. <br>
+	* <b>name</b>: forwardLevel.<br>
+ 	* <b>post</b>: the level of a forward as a star inside the world of soccer was calculated. <br>
+ 	* @return double <code> level </code> that is a variable with the level of a forward as a star inside the world of soccer.
+	*/
 
 	@Override
 	public double forwardLevel(){
@@ -221,10 +279,10 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 	}
 
 	/**
-	* This method produces a String with the information of a private playlist. <br>
+	* This method produces a String with all the information about a player. <br>
 	* <b>name</b>: toString.<br>
- 	* <b>post</b>: the information of the playlist was returned. <br>
- 	* @return out in a <code> String </code> variable all information of a private playlist.
+ 	* <b>post</b>: the information of a player was returned. <br>
+ 	* @return out in a <code> String </code> variable all information about a player.
 	*/
 
 	@Override
