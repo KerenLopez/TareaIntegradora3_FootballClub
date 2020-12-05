@@ -240,6 +240,7 @@ public class FootballClub{
  	* @param salary is a double variable that contains the salary of a player.
  	* @param numShirt an integer variable that contains the number of shirt of a player.
  	* @param team is a String variable that contains the name of a team.
+ 	* @param averageGrade is a double variable that contains the new player's average grade.
  	* @param position is an integer variable that represents the position of a player in the soccer field.
  	* @return String <code> message </code> that is a variable with a notice for the user.
 	*/
@@ -323,7 +324,7 @@ public class FootballClub{
  	* @param id is a String variable that contains the ID of an assistant coach.
  	* @param salary is a double variable that contains the salary of an assistant coach.
  	* @param experience is an integer variable that contains the assistant coach's number years of experience.
- 	* @param professionalPlayer is an integer variable that represents if the assistant coach has ever been a professional player or not.
+ 	* @param profession is an integer variable that represents if the assistant coach has ever been a professional player or not.
 	* @param expertises is an ArrayList of integers that represents the expertises of an assistant coach.
 	* @param team is a String variable that contains the name of a team.
  	* @return String <code> message </code> that is a variable with a notice for the user.
@@ -430,7 +431,7 @@ public class FootballClub{
 	* <b>pre</b>: the variables id, newSalary and option are already inicializated. <br>
  	* <b>post</b>: the salary of the employee was updated successfully or not. <br>
  	* @param id is a String variable that contains the ID of an employee.
- 	* @param salary is a double variable that contains the salary of an employee.
+ 	* @param newSalary is a double variable that contains the salary of an employee.
  	* @param option is an integer variable that represents the menu option chosen by the user.
  	* @return String <code> message </code> that is a variable with a notice for the user.
 	*/

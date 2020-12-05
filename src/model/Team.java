@@ -298,7 +298,7 @@ public class Team{
 	* <b>name</b>: addAssistantCoach.<br>
 	* <b>pre</b>: the object newAssCoach is already inicializated. <br>
  	* <b>post</b>: the assistant coach was added successfully or the assistant coach couldn't be added to a team. <br>
- 	* @param newMCoach is an object of type AssistantCoach that is going to be added to a team. 
+ 	* @param newAssCoach is an object of type AssistantCoach that is going to be added to a team. 
  	* @return String <code> message </code> that is a variable with a notice for the user.
 	*/
 
