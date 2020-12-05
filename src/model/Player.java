@@ -222,7 +222,7 @@ public class Player extends Employee implements MarketPriceAndLevelPlayer{
 
 	@Override
 	public double forwardMarketPrice(){
-		marketPrice = (getSalary()*12)+(averageGrade*145)+(numGoals*150);
+		marketPrice = (getSalary()*15)+(averageGrade*145)+(numGoals*150);
 		return marketPrice;
 	}
 
