@@ -134,7 +134,7 @@ public class Lineup{
 	* <b>post</b>: All the defenses, midfielders and forwards were correctly placed in the soccer field (matrix). <br>
 	* @param defenses is a integer variable that contains the number of players that are going to be in the line of defense.
 	* @param midfielders is a integer variable that contains the number of players that are going to be in the line of midfielders.
-	* @param forwards is a list of PlayList objects that contains the number of players that are going to be in the line of forwards.
+	* @param forwards is a integer variable that contains the number of players that are going to be in the line of forwards.
 	*/
 
 	public void addFormation(int defenses, int midfielders, int forwards){

@@ -418,8 +418,8 @@ public class FootballClub{
 	* <b>name</b>: changeSalaryEmployee.<br>
 	* <b>pre</b>: the variables id, newSalary and option are already inicializated. <br>
  	* <b>post</b>: the salary of the employee was updated successfully or not. <br>
- 	* @param id is a String variable that contains the ID of an assistant coach.
- 	* @param salary is a double variable that contains the salary of an assistant coach.
+ 	* @param id is a String variable that contains the ID of an employee.
+ 	* @param salary is a double variable that contains the salary of an employee.
  	* @param option is an integer variable that represents the menu option chosen by the user.
  	* @return String <code> message </code> that is a variable with a notice for the user.
 	*/
@@ -475,7 +475,7 @@ public class FootballClub{
 	* <b>name</b>: changeNumShirt.<br>
 	* <b>pre</b>: the variables id, team, numShirt and option are already inicializated. <br>
  	* <b>post</b>: the number of shirt of a player was updated successfully or not. <br>
- 	* @param id is a String variable that contains the ID of an assistant coach.
+ 	* @param id is a String variable that contains the ID of a player.
   	* @param numShirt an integer variable that contains the number of shirt of a player.
  	* @param team is a String variable that contains the name of a team.
  	* @param option is an integer variable that represents the menu option chosen by the user.
@@ -525,9 +525,9 @@ public class FootballClub{
 	* <b>name</b>: changeNumGoals.<br>
 	* <b>pre</b>: the variables id, numGoals and option are already inicializated. <br>
  	* <b>post</b>: the number of goals that a player has scored in the club was updated successfully or not. <br>
- 	* @param id is a String variable that contains the ID of an assistant coach.
+ 	* @param id is a String variable that contains the ID of a player.
  	* @param option is an integer variable that represents the menu option chosen by the user.
- 	* @param option is an integer variable that represents the number of goals that a player has scored in the club.
+ 	* @param numGoals is an integer variable that represents the number of goals that a player has scored in the club.
  	* @return String <code> message </code> that is a variable with a notice for the user.
 	*/
 
@@ -550,6 +550,17 @@ public class FootballClub{
 		} return message;		
 	}
 
+	/**
+	* This method changes the average grade of a player. <br>
+	* <b>name</b>: changeAverageGrade.<br>
+	* <b>pre</b>: the variables id, averageGrade and option are already inicializated. <br>
+ 	* <b>post</b>: the average grade of a player was updated successfully or not. <br>
+ 	* @param id is a String variable that contains the ID of a player.
+ 	* @param averageGrade is a double variable that represents the average grade of a player.
+ 	* @param option is an integer variable that represents the menu option chosen by the user.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
+
 	public String changeAverageGrade(String id, double averageGrade, int option){
 		Employee objEmployee = findEmployee(id);
 		String message = " ";
@@ -568,6 +579,17 @@ public class FootballClub{
 			}
 		} return message;
 	}
+
+	/**
+	* This method changes the position of a player in the soccer field. <br>
+	* <b>name</b>: changePosition.<br>
+	* <b>pre</b>: the variables id, position and option are already inicializated. <br>
+ 	* <b>post</b>: the position of a player in the soccer field was updated successfully or not. <br>
+ 	* @param id is a String variable that contains the ID of a player.
+ 	* @param position is an integer variable that represents the position of a player in the soccer field.
+ 	* @param option is an integer variable that represents the menu option chosen by the user.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
 
 	public String changePosition(String id, int position, int option){
 		Employee objEmployee = findEmployee(id);
@@ -600,6 +622,17 @@ public class FootballClub{
 			}
 		} return message;
 	}
+
+	/**
+	* This method changes the years of experience that a coach has. <br>
+	* <b>name</b>: changeExperienceEmployee.<br>
+	* <b>pre</b>: the variables id, experience and option are already inicializated. <br>
+ 	* <b>post</b>: the years of experience that a coach has were updated successfully or not. <br>
+ 	* @param id is a String variable that contains the ID of a coach.
+ 	* @param experience is an integer variable that contains the coach's number years of experience.
+ 	* @param option is an integer variable that represents the menu option chosen by the user.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
 
 	public String changeExperienceEmployee(String id, int experience, int option){
 		Employee objEmployee = findEmployee(id);
@@ -637,6 +670,17 @@ public class FootballClub{
 		} return message;
 	}
 
+	/**
+	* This method changes the number of teams that a main coach has been in charge during his career. <br>
+	* <b>name</b>: changeNumTeamsEmployee.<br>
+	* <b>pre</b>: the variables id, numTeams and option are already inicializated. <br>
+ 	* <b>post</b>: the number of teams that a main coach has been in charge during his career were updated successfully or not. <br>
+ 	* @param id is a String variable that contains the ID of an main coach.
+ 	* @param numTeams is an integer variable that contains the number of teams that a main coach has been in charge during his career.
+ 	* @param option is an integer variable that represents the menu option chosen by the user.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
+
 	public String changeNumTeamsEmployee(String id, int numTeams, int option){
 		Employee objEmployee = findEmployee(id);
 		String message = " ";
@@ -655,6 +699,18 @@ public class FootballClub{
 			}
 		} return message;
 	}
+
+	/**
+	* This method changes the championships that a main coach has achieved during his career. <br>
+	* <b>name</b>: changeChampionshipsEmployee.<br>
+	* <b>pre</b>: the variables id, numChampionships, option, and the ArrayList championships are already inicializated. <br>
+ 	* <b>post</b>: the championships that a main coach has achieved during his career were updated successfully or not. <br>
+ 	* @param id is a String variable that contains the ID of a main coach.
+ 	* @param numChampionships is an integer variable that contains the number of championships that a main coach has achieved during his career.
+	* @param championships is an ArrayList of Strings that contains the names of all the championships that a main coach has achieved during his career.
+ 	* @param option is an integer variable that represents the menu option chosen by the user.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
 
 	public String changeChampionshipsEmployee(String id, int numChampionships, ArrayList<String> championships, int option){
 		Employee objEmployee = findEmployee(id);
@@ -678,6 +734,17 @@ public class FootballClub{
 		} return message;
 	}
 
+	/**
+	* This method changes the expertises that an assistant coach has. <br>
+	* <b>name</b>: changeExpertisesEmployee.<br>
+	* <b>pre</b>: the variables id, option, and the ArrayList expertises are already inicializated. <br>
+ 	* <b>post</b>: the expertises that an assistant coach has were updated successfully or not. <br>
+ 	* @param id is a String variable that contains the ID of a main coach.
+ 	* @param expertises is an ArrayList of integers that represents the expertises of an assistant coach.
+ 	* @param option is an integer variable that represents the menu option chosen by the user.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
+
 	public String changeExpertisesEmployee(String id, ArrayList<Integer> expertises, int option){
 		Employee objEmployee = findEmployee(id);
 		String message = " ";
@@ -697,6 +764,16 @@ public class FootballClub{
 		} return message;
 	}
 
+	/**
+	* This method changes the name of a team. <br>
+	* <b>name</b>: changeInfoTeam.<br>
+	* <b>pre</b>: the variables name and newName are already inicializated. <br>
+ 	* <b>post</b>: the name of the team was updated successfully or not. <br>
+ 	* @param name is a String variable that contains the name of a team.
+ 	* @param newName is a String variable that contains the new name that is going to assign to a team.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
+
 	public String changeInfoTeam(String name, String newName){
 		String message = "\nEl nombre del equipo ha sido actualizado correctamente";
 		if(teamA.getName().equalsIgnoreCase(name)||teamB.getName().equalsIgnoreCase(name)){
@@ -713,6 +790,20 @@ public class FootballClub{
 			message = "\nEl equipo no existe, intentelo nuevamente";
 		} return message;
 	}
+
+	/**
+	* This method adds a lineup to a specific team. <br>
+	* <b>name</b>: addLineupToTeam.<br>
+	* <b>pre</b>: the variables such as nameTeam, date, tactic, defenses, midfielders and forwards are already inicializated. <br>
+ 	* <b>post</b>: the lineup of a team was added successfully to a team or not. <br>
+ 	* @param nameTeam is a String variable that contains the name of a team.
+ 	* @param date is a String variable that contains the date when a lineup was implemented by a team.
+	* @param tactic is a integer variable that represents the tactic that is used in a lineup.
+	* @param defenses is a integer variable that contains the number of players that are going to be in the line of defense at the formation.
+	* @param midfielders is a integer variable that contains the number of players that are going to be in the line of midfielders at the formation.
+	* @param forwards is a integer variable that contains the number of players that are going to be in the line of forwards at the formation.
+ 	* @return String <code> message </code> that is a variable with a notice for the user.
+	*/
 
 	public String addLineupToTeam(String nameTeam, String date, int tactic, int defenses, int midfielders, int forwards){
 		String message = " ";

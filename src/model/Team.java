@@ -503,7 +503,7 @@ public class Team{
 	* @param tactic is a integer variable that represents the tactic that is used in a lineup.
 	* @param defenses is a integer variable that contains the number of players that are going to be in the line of defense at the formation.
 	* @param midfielders is a integer variable that contains the number of players that are going to be in the line of midfielders at the formation.
-	* @param forwards is a list of PlayList objects that contains the number of players that are going to be in the line of forwards at the formation.
+	* @param forwards is a integer variable that contains the number of players that are going to be in the line of forwards at the formation.
  	* @return String <code> message </code> that is a variable with the formation that was used in a lineup.
 	*/
 
