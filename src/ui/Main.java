@@ -48,7 +48,7 @@ public class Main{
 		name = lector.nextLine();
 		System.out.println("\nIngrese el numero de NIT del club: ");
 		nit = lector.nextLine();
-		System.out.println("\nIngrese la fecha de fundacion del club: ");
+		System.out.println("\nIngrese la fecha de fundacion del club (DD/MM/AAAA): ");
 		date = lector.nextLine();
 		mainFootballClub = new FootballClub(name, nit, date);	
 	}
@@ -549,7 +549,7 @@ public class Main{
     			System.out.println(message);
     			break;
     		case 2:
-    			System.out.println("Ingrese la fecha en que esta creando la alineacion: ");
+    			System.out.println("Ingrese la fecha en que esta creando la alineacion (DD/MM/AAAA): ");
     			date = lector.nextLine();
     			do{
     				System.out.println(

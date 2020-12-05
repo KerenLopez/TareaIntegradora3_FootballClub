@@ -394,6 +394,7 @@ public class FootballClub{
 	public String deleteEmployee(String id, String team){
 		String message = "";
 		Employee objEmployee = findEmployee(id);
+		boolean stop = false;
 		if(objEmployee!=null && (teamA.getName().equalsIgnoreCase(team)||teamB.getName().equalsIgnoreCase(team))){
 			if(teamA.getName().equalsIgnoreCase(team)){
 				message = teamA.deleteEmployee(objEmployee);
@@ -402,6 +403,16 @@ public class FootballClub{
 			}
 			if(message.equals("\nEl proceso se realizo exitosamente, el empleado fue despedido")){
 				objEmployee.setState(Employee.INACTIVE);
+				if(objEmployee instanceof Coach){
+					for(int i=0;i<SIX && !stop;i++){
+						for(int j=0;j<SIX;j++){
+							if(office[i][j]!=null && office[i][j].getId().equals(((Coach)objEmployee).getId())){
+								office[i][j] = null;
+								stop = true;
+							}
+						}
+					}
+				}
 			}	
 		} else{
 			if(objEmployee==null){
